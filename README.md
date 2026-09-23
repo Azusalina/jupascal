@@ -1,6 +1,7 @@
-## ***Self-customized version of jupascal , referring to https://www.jupascal.com***
+## ***Self-customized version of jupascal***
 
-Requires Node.js 20+;
+referring to https://www.jupascal.com;
+*Requires Node.js 20+;*
 
 ```bash
 npm install
