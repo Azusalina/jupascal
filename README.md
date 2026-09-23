@@ -1,6 +1,6 @@
-self-customized version of jupascal , referring to [jupascal.com]
+## ***Self-customized version of jupascal , referring to https://www.jupascal.com***
 
-Requires Node.js 20+.
+Requires Node.js 20+;
 
 ```bash
 npm install
@@ -10,7 +10,7 @@ npm run build
 
 
 
-## structure
+## Structure
 
 ```
 index.html, src/, vite.config.ts   the React app (repo root)
