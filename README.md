@@ -21,7 +21,7 @@ scripts/extraction/                per-institution scrapers
 scripts/utils/                     unification + validation
 scripts/*.mjs                      JS audit harnesses (npm run audit*)
 docs/manuals/                      architecture & calculation notes
-.github/workflows/deploy.yml       build + deploy to GitHub Pages
+.github/workflows/static.yml       build + deploy to GitHub Pages on pushes to the default branch
 ```
 
 ## License
