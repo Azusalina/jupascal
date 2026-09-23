@@ -1,0 +1,211 @@
+[
+  {
+    "code": "JS5102",
+    "name": "Science (Group A)",
+    "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 33.13,
+      "lq": 32.63
+    },
+    "expected": 29.0
+  },
+  {
+    "code": "JS5103",
+    "name": "Science (Group B)",
+    "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Biology / Chemistry (x2), Physics / M1 / M2 (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 33.38,
+      "lq": 32.75
+    },
+    "expected": 29.0
+  },
+  {
+    "code": "JS5181",
+    "name": "Science (Group A) with Extended Major in Artificial Intelligence",
+    "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 37.5,
+      "lq": 36.0
+    },
+    "expected": 33.0
+  },
+  {
+    "code": "JS5300",
+    "name": "Business and Management",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 35.0,
+      "lq": 33.9
+    },
+    "expected": 33.0
+  },
+  {
+    "code": "JS5311",
+    "name": "BBA in Economics",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 36.55,
+      "lq": 35.4
+    },
+    "expected": 35.0
+  },
+  {
+    "code": "JS5312",
+    "name": "BBA in Finance",
+    "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 43.31,
+      "lq": 41.81
+    },
+    "expected": 39.0
+  },
+  {
+    "code": "JS5313",
+    "name": "BBA in Global Business",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 52.43,
+      "lq": 50.4
+    },
+    "expected": 50.0
+  },
+  {
+    "code": "JS5314",
+    "name": "BBA in Information Systems",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 35.93,
+      "lq": 35.4
+    },
+    "expected": 34.0
+  },
+  {
+    "code": "JS5315",
+    "name": "BBA in Management",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 33.9,
+      "lq": 33.9
+    },
+    "expected": 34.0
+  },
+  {
+    "code": "JS5316",
+    "name": "BBA in Marketing",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 32.55,
+      "lq": 32.4
+    },
+    "expected": 34.0
+  },
+  {
+    "code": "JS5317",
+    "name": "BBA in Operations Management",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 32.4,
+      "lq": 32.05
+    },
+    "expected": 34.0
+  },
+  {
+    "code": "JS5318",
+    "name": "BBA in Professional Accounting",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects",
+    "maximum": 62.48,
+    "benchmarks": {
+      "median": 34.05,
+      "lq": 33.55
+    },
+    "expected": 34.0
+  },
+  {
+    "code": "JS5331",
+    "name": "BSc in Economics and Finance",
+    "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 48.19,
+      "lq": 46.5
+    },
+    "expected": 44.0
+  },
+  {
+    "code": "JS5332",
+    "name": "BSc in Quantitative Finance",
+    "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 58.13,
+      "lq": 56.06
+    },
+    "expected": 54.0
+  },
+  {
+    "code": "JS5411",
+    "name": "BSc in Global China Studies",
+    "formula": "English x 2 + Chinese x 1.5 + Best 3 other subjects Cat. C subjects may be used once in the score calculation.",
+    "maximum": 58.01,
+    "benchmarks": {
+      "median": 29.23,
+      "lq": 28.8
+    },
+    "expected": 27.0
+  },
+  {
+    "code": "JS5412",
+    "name": "BSc in Quantitative Social Analysis",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 33.0,
+      "lq": 32.5
+    },
+    "expected": 31.0
+  },
+  {
+    "code": "JS5813",
+    "name": "BSc in Mathematics and Economics",
+    "formula": "English x 2 + Math x 2 + Best from Biology / Chemistry / Physics / Economics / M1 / M2 + Best 2 other subjects Weighting: M1 / M2 (x 2), Biology / Chemistry / Physics / Economics (x 1.5)",
+    "maximum": 71.4,
+    "benchmarks": {
+      "median": 44.1,
+      "lq": 39.2
+    },
+    "expected": 38.0
+  },
+  {
+    "code": "JS5814",
+    "name": "BSc in Risk Management and Business Intelligence",
+    "formula": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 44.25,
+      "lq": 43.5
+    },
+    "expected": 40.0
+  },
+  {
+    "code": "JS5822",
+    "name": "BSc in Sustainable and Green Finance",
+    "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
+    "maximum": 66.94,
+    "benchmarks": {
+      "median": 37.88,
+      "lq": 37.13
+    },
+    "expected": 37.0
+  }
+]

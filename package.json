@@ -1,0 +1,35 @@
+{
+  "name": "jupas-cal",
+  "private": true,
+  "version": "1.2.0",
+  "admissionCycle": "2026",
+  "description": "Unofficial, client-side HKDSE/JUPAS admission-score calculator for Hong Kong university applicants. Educational use only.",
+  "homepage": "https://jupascal.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JUPASCal/JUPASCal.github.io.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5174 --strictPort",
+    "build": "tsc -b && vite build && npm run build:seo",
+    "build:seo": "node scripts/seo/generate_seo_pages.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "data:build": "python3 scripts/utils/unify_2026_data.py",
+    "test": "node scripts/personal_audit.mjs",
+    "audit": "npm test"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.13",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}

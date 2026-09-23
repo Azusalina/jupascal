@@ -1,0 +1,376 @@
+[
+  {
+    "code": "JS6755",
+    "name": "Bachelor of Business Administration",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 37.0,
+      "median": 37.0,
+      "lq": 36.0
+    }
+  },
+  {
+    "code": "JS6767",
+    "name": "Bachelor of Economics / Bachelor of Economics and Finance",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 40.0,
+      "median": 40.0,
+      "lq": 39.0
+    }
+  },
+  {
+    "code": "JS6781",
+    "name": "Bachelor of Business Administration in Accounting and Finance / Bachelor of Business Administration in Accounting Data Analytics",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 36.0,
+      "median": 35.0,
+      "lq": 34.0
+    }
+  },
+  {
+    "code": "JS6793",
+    "name": "Bachelor of Business Administration (Business Analytics)",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
+    "benchmarks": {
+      "uq": 36.0,
+      "median": 35.0,
+      "lq": 34.0
+    }
+  },
+  {
+    "code": "JS6846",
+    "name": "Bachelor of Science in Marketing Analytics and Technology",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in one of the following subjects: Biology, Business, Accounting and Financial Studies (Accounting), Business, Accounting and Financial Studies (Business Management), Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
+    "benchmarks": {
+      "uq": 34.0,
+      "median": 33.0,
+      "lq": 32.0
+    }
+  },
+  {
+    "code": "JS6860",
+    "name": "Bachelor of Finance in Asset Management and Private Banking",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 4 Subjects + 0.2 x 7th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 48.0,
+      "median": 47.0,
+      "lq": 46.0
+    }
+  },
+  {
+    "code": "JS6884",
+    "name": "Bachelor of Science in Quantitative Finance",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 7th Best Subject",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in Mathematics Extended Part (Module 1 or 2).",
+    "benchmarks": {
+      "uq": 55.0,
+      "median": 51.0,
+      "lq": 50.0
+    }
+  },
+  {
+    "code": "JS6896",
+    "name": "Bachelor of Business Administration in International Business and Global Management",
+    "faculty": "HKU Business School",
+    "formula": "1.5 x Eng + 1.5 x Math + Best 4 Subjects + 0.2 x 7th Best Subject",
+    "core": [
+      "5",
+      "3",
+      "4",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 56.0,
+      "median": 54.0,
+      "lq": 53.0
+    }
+  },
+  {
+    "code": "JS6705",
+    "name": "Bachelor of Psychology",
+    "faculty": "Faculty of Social Sciences",
+    "formula": "Best 5 Subjects ¤",
+    "core": [
+      "3",
+      "3",
+      "2",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 31.0,
+      "median": 31.0,
+      "lq": 29.0
+    }
+  },
+  {
+    "code": "JS6717",
+    "name": "Bachelor of Social Sciences",
+    "faculty": "Faculty of Social Sciences",
+    "formula": "Best 5 Subjects ¤",
+    "core": [
+      "3",
+      "3",
+      "2",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 34.0,
+      "median": 31.0,
+      "lq": 29.0
+    }
+  },
+  {
+    "code": "JS6731",
+    "name": "Bachelor of Social Work",
+    "faculty": "Faculty of Social Sciences",
+    "formula": "Best 5 Subjects ¤",
+    "core": [
+      "3",
+      "3",
+      "2",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 28.0,
+      "median": 28.0,
+      "lq": 26.0
+    }
+  },
+  {
+    "code": "JS6200",
+    "name": "Computing and Data Science (Delta+)",
+    "faculty": "School of Computing and Data Science",
+    "formula": "Eng + Math + Best 3 Subjects",
+    "core": [
+      "3",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
+    "benchmarks": {
+      "uq": null,
+      "median": null,
+      "lq": null
+    }
+  },
+  {
+    "code": "JS6224",
+    "name": "Bachelor of Arts and Sciences in Applied Artificial Intelligence",
+    "faculty": "School of Computing and Data Science",
+    "formula": "Eng + Math + Best 3 Subjects",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
+    "benchmarks": {
+      "uq": 57.0,
+      "median": 53.0,
+      "lq": 51.0
+    }
+  },
+  {
+    "code": "JS6248",
+    "name": "Bachelor of Arts and Sciences in Financial Technology",
+    "faculty": "School of Computing and Data Science",
+    "formula": "Eng + Math + Best 3 Subjects",
+    "core": [
+      "4",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "",
+    "benchmarks": {
+      "uq": 35.0,
+      "median": 34.0,
+      "lq": 32.0
+    }
+  },
+  {
+    "code": "JS6729",
+    "name": "Bachelor of Science in Actuarial Science",
+    "faculty": "School of Computing and Data Science",
+    "formula": "1.2 x Eng + 1.2 x Math + 1.2 x M1 / M2 + Best 2 Subjects",
+    "core": [
+      "3",
+      "3",
+      "4",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 4 or above in Mathematics Extended Part (Module 1 or 2).",
+    "benchmarks": {
+      "uq": 36.0,
+      "median": 35.0,
+      "lq": 35.0
+    }
+  },
+  {
+    "code": "JS6779",
+    "name": "Statistical Decision Sciences",
+    "faculty": "School of Computing and Data Science",
+    "formula": "1.5 x Math + Best 4 Subjects",
+    "core": [
+      "3",
+      "3",
+      "4",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "–",
+    "benchmarks": {
+      "uq": 33.0,
+      "median": 33.0,
+      "lq": 31.0
+    }
+  },
+  {
+    "code": "JS6999",
+    "name": "Computing and Data Science",
+    "faculty": "School of Computing and Data Science",
+    "formula": "Eng + Math + Best 3 Subjects",
+    "core": [
+      "3",
+      "3",
+      "3",
+      "Attained (A)/2"
+    ],
+    "electives": [
+      "3",
+      "3"
+    ],
+    "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
+    "benchmarks": {
+      "uq": 44.0,
+      "median": 41.0,
+      "lq": 39.0
+    }
+  }
+]

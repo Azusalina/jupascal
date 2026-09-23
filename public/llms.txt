@@ -1,0 +1,4 @@
+# Personal JUPASCal
+
+Selected HKU and HKUST programmes only. All calculations use 2026 formulas.
+Historical admission figures are labelled 2025 and are not recalculated.
