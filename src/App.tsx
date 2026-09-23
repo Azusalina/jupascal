@@ -439,11 +439,12 @@ function CalculatorApp() {
   useEffect(() => {
     let cancelled = false;
 
-    // The worker owns the heavy data work: it fetches + parses the
-    // 3.2MB dataset (off the main thread, so reloads don't freeze)
-    // AND computes the ~419 ProgrammeResults from grades in the
-    // background (so step-1 grade entry stays reactive – the compute
-    // never touches the main thread). It posts back:
+    // The worker owns data loading and per-programme calculations
+    // off the main thread, so loading and grade entry stay responsive.
+    // It fetches + parses the dataset and computes ProgrammeResults
+    // from the current grades in the background, keeping step-1 entry
+    // responsive because the score calculation never touches the UI thread.
+    // It posts back:
     //  - `loaded`: the raw programmes (UI needs them for the
     //    filters + slot picker), and we kick off the
     //    first compute.
@@ -968,7 +969,7 @@ function CalculatorApp() {
   // allResults is computed in the worker (off the main thread) and
   // arrives via the `computed` message. Holding it as state – rather
   // than a useMemo over grades – is what keeps step-1 grade entry
-  // reactive: the 419× score/eligibility/benchmark calc never runs on
+  // reactive: per-programme score/eligibility/benchmark calculations never run on
   // the main thread, so the grade buttons never block. Seeded empty
   // until the first compute lands.
   const [allResults, setAllResults] = useState<ProgrammeResult[]>(EMPTY_RESULTS);
@@ -1846,7 +1847,7 @@ function CalculatorApp() {
 
           {/* Render heavy panel content ONLY for the active step. The
               inactive panels are display:none (above), but React still
-              renders their children otherwise – so the ~419-card Step-2
+              renders their children otherwise – so a large Step-2
               ResultsView was reconciling on every Step-1 grade tap,
               causing the per-click lag. Worker compute keeps results
               ready; this just defers the DOM build to step entry. */}

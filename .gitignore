@@ -3,4 +3,5 @@ dist/
 package.json
 package-lock.json
 *.tsbuildinfo
-
+__pycache__/
+*.py[cod]

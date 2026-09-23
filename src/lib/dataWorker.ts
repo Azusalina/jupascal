@@ -5,13 +5,12 @@ import type { Programme, ProgrammeResult, StudentGrades } from "../types/jupas";
 
 // Off-main-thread data layer for the JUPAS calculator.
 //
-// 1. `load` – fetches + JSON.parses the ~3.2MB unified dataset. Doing
-//    this inline (the old localStorage path) blocked the main thread
-//    for 100ms+ on every reload. The parsed programmes are kept here
+// 1. `load` – fetches + JSON.parses the unified programme dataset off the
+//    UI thread. The parsed programmes are kept here
 //    AND posted back (the UI needs the raw list for the institution
 //    filter + slot picker).
 //
-// 2. `compute` – runs the ~419 buildProgrammeResult calls (score +
+// 2. `compute` – runs buildProgrammeResult once per loaded programme (score +
 //    eligibility + benchmark per programme) against a set of grades.
 //    This is the work that made the step-1 grade buttons lag when it
 //    ran on the main thread. Running it here keeps grade entry fully

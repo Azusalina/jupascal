@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import {
+  memo,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -80,7 +81,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   const dragStartRef = useRef<{ x: number; y: number } | null>(null);
   const marqueeRef = useRef<Rect | null>(null);
   const panStartRef = useRef<{ x: number; y: number; scrollLeft: number; scrollTop: number } | null>(null);
-  const previousRectsRef = useRef<Map<string, DOMRect>>(new Map());
+  const previousRectsRef = useRef<Map<string, Rect>>(new Map());
   const zoomScale = zoomPercent / 100;
   const overviewNodes = zoomPercent < MASTER_TITLE_ZOOM_THRESHOLD;
   const detailNodes = zoomPercent >= DETAIL_ZOOM_THRESHOLD;
@@ -90,23 +91,34 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
     [results, sortMode, customJupasWeight],
   );
 
+  const pathwaysByCode = useMemo(() => {
+    const pathways = new Map<string, MasterPathway[]>();
+    for (const result of results) {
+      pathways.set(result.programme.jupas_code, masterPathwaysFor(result.programme));
+    }
+    return pathways;
+  }, [results]);
+
   const compareNodes = useMemo(() => {
     const nodes = new Map<string, CompareNode>();
     for (const result of results) {
       const majorId = majorNodeId(result);
       nodes.set(majorId, { id: majorId, type: "major", result });
-      for (const pathway of masterPathwaysFor(result.programme)) {
+      for (const pathway of pathwaysByCode.get(result.programme.jupas_code) ?? []) {
         const id = masterNodeId(result, pathway);
         nodes.set(id, { id, type: "master", parent: result, pathway });
       }
     }
     return nodes;
-  }, [results]);
+  }, [results, pathwaysByCode]);
 
   const selectedNodes = selectedIds.map((id) => compareNodes.get(id)).filter((node): node is CompareNode => Boolean(node));
-  const layoutKey = rankedResults
-    .map((result) => `${result.programme.jupas_code}:${result.calculation.totalScore.toFixed(3)}`)
-    .join("|") + `:${sortMode}:${customJupasWeight}`;
+  const layoutOrderKey = INSTITUTIONS
+    .map((institution) => `${institution}:${rankedResults
+      .filter((result) => result.programme.institution === institution)
+      .map((result) => result.programme.jupas_code)
+      .join(",")}`)
+    .join("|");
 
   const gradeItems = useMemo(() => {
     const ordered = [...CORE_SUBJECTS, M1_SUBJECT, ...PERSONAL_ELECTIVES];
@@ -117,6 +129,8 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   }, [grades]);
 
   const scoreSignature = gradeItems.map((item) => `${item.subject}:${item.grade}`).join("|");
+  const previousLayoutOrderRef = useRef("");
+  const previousZoomRef = useRef(DEFAULT_ZOOM);
 
   useEffect(() => {
     if (selectedIds.length === 2) setCompareOpen(true);
@@ -139,15 +153,26 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const nextRects = new Map<string, DOMRect>();
+    const currentZoom = zoomPercentRef.current;
+    const orderChanged = previousLayoutOrderRef.current !== layoutOrderKey;
+    const zoomChanged = previousZoomRef.current !== currentZoom;
+    const nextRects = new Map<string, Rect>();
+    const canvasRect = canvas.getBoundingClientRect();
+    const currentZoomScale = currentZoom / 100;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     canvas.querySelectorAll<HTMLElement>("[data-layout-id]").forEach((element) => {
       const id = element.dataset.layoutId;
       if (!id) return;
-      const next = element.getBoundingClientRect();
+      const screenRect = element.getBoundingClientRect();
+      const next = {
+        left: (screenRect.left - canvasRect.left) / currentZoomScale,
+        top: (screenRect.top - canvasRect.top) / currentZoomScale,
+        width: screenRect.width / currentZoomScale,
+        height: screenRect.height / currentZoomScale,
+      };
       const previous = previousRectsRef.current.get(id);
       nextRects.set(id, next);
-      if (!previous || reduceMotion) return;
+      if (!orderChanged || zoomChanged || !previous || reduceMotion) return;
       const dx = previous.left - next.left;
       const dy = previous.top - next.top;
       if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
@@ -160,7 +185,9 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
       );
     });
     previousRectsRef.current = nextRects;
-  }, [layoutKey]);
+    previousLayoutOrderRef.current = layoutOrderKey;
+    previousZoomRef.current = currentZoom;
+  }, [layoutOrderKey]);
 
   function toggleSelected(id: string) {
     setSelectedIds((current) => {
@@ -457,7 +484,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
                       <div className="pathway-programme-scroll">
                         <div className="pathway-programme-list">
                           {institutionResults.length ? institutionResults.map((result, index) => {
-                            const routes = masterPathwaysFor(result.programme);
+                            const routes = pathwaysByCode.get(result.programme.jupas_code) ?? [];
                             const rank = pathwayRank(result, sortMode, customJupasWeight);
                             const majorId = majorNodeId(result);
                             return (
@@ -555,7 +582,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   );
 }
 
-function MasterBranchSummary({ routes, lang }: { routes: MasterPathway[]; lang: Lang }) {
+const MasterBranchSummary = memo(function MasterBranchSummary({ routes, lang }: { routes: MasterPathway[]; lang: Lang }) {
   const { t } = useLang();
   const labels = routes.slice(0, 2).map((route) => masterDirectionLabel(route, lang));
   const remaining = Math.max(0, routes.length - labels.length);
@@ -575,7 +602,7 @@ function MasterBranchSummary({ routes, lang }: { routes: MasterPathway[]; lang: 
       </span>
     </div>
   );
-}
+});
 
 function masterDirectionLabel(pathway: MasterPathway, lang: Lang): string {
   const name = localized(pathway.name, lang);

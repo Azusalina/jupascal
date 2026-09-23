@@ -48,16 +48,15 @@ export function ResultsView({ results, selectedCodes, activeCode, compact, delta
   const { t, lang } = useLang();
   const slotByCode = new Map(selectedCodes.map((code, index) => [code, slotLabel(index)]));
   // Render only the view that matches the current viewport instead
-  // of building both the desktop table AND the mobile cards for all
-  // ~419 results (the CSS hid one, but React still rendered both –
+  // of building both the desktop table AND the mobile cards for every
+  // result (the CSS hid one, but React still rendered both –
   // 2× the DOM + reconciliation work on every filter/sort change).
   // matchMedia reads synchronously on first render so there's no
   // wrong-view flash. 920px mirrors the CSS breakpoint below.
   const isDesktop = useMediaQuery(DESKTOP_MEDIA_QUERY);
 
-  // Windowed rendering. Building all ~419 rows (table OR cards) in one
-  // commit is what made entering Step 2 lag – so we paint an initial
-  // chunk immediately and stream the rest in as the user scrolls toward
+  // Windowed rendering keeps larger programme lists responsive: paint an
+  // initial chunk immediately and stream the rest in as the user scrolls toward
   // the bottom (an IntersectionObserver sentinel with a generous preload
   // margin keeps it seamless). Resets to the first chunk whenever the
   // list identity changes (filter / sort / data update).
