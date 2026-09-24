@@ -587,6 +587,7 @@ export const STRINGS = {
   "tree.fitView": { en: "Fit", zh: "總覽" },
   "tree.actualSize": { en: "100%", zh: "100%" },
   "tree.zoomGesture": { en: "Wheel / pinch", zh: "滾輪／捏合" },
+  "tree.mobileGesture": { en: "Drag to explore majors and master's routes · use − / + to zoom", zh: "拖動畫布瀏覽主修與碩士路徑 · 用 −／+ 調整大小" },
   "tree.overviewVisible": { en: "Below {threshold}%: the overview shows each major, broad master's directions and route count.", zh: "低於 {threshold}%：總覽顯示每個 major、碩士大致方向與路徑數量。" },
   "tree.masterTitlesVisible": { en: "Master's titles are visible; zoom to {threshold}% for full node details.", zh: "現已顯示碩士名稱；放大至 {threshold}% 可查看完整節點內容。" },
   "tree.detailsExpanded": { en: "At {threshold}% or above: node descriptions are expanded.", zh: "達 {threshold}% 或以上：展開節點介紹。" },

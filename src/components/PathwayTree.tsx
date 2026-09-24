@@ -57,6 +57,11 @@ const ZOOM_STEP = 10;
 const MASTER_TITLE_ZOOM_THRESHOLD = 75;
 const DETAIL_ZOOM_THRESHOLD = 100;
 const DEFAULT_ZOOM = 70;
+const MOBILE_ZOOM = 55;
+
+function startingZoom(): number {
+  return window.matchMedia("(max-width: 620px)").matches ? MOBILE_ZOOM : DEFAULT_ZOOM;
+}
 
 function formatScore(value: number | null | undefined): string {
   if (typeof value !== "number") return "–";
@@ -72,11 +77,11 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   const [masterDetail, setMasterDetail] = useState<MasterCompareNode | null>(null);
   const [marquee, setMarquee] = useState<Rect | null>(null);
   const [interactionMode, setInteractionMode] = useState<InteractionMode>("pan");
-  const [zoomPercent, setZoomPercent] = useState(DEFAULT_ZOOM);
+  const [zoomPercent, setZoomPercent] = useState(startingZoom);
   const [isPanning, setIsPanning] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
-  const zoomPercentRef = useRef(DEFAULT_ZOOM);
+  const zoomPercentRef = useRef(zoomPercent);
   const wheelDeltaRef = useRef(0);
   const dragStartRef = useRef<{ x: number; y: number } | null>(null);
   const marqueeRef = useRef<Rect | null>(null);
@@ -130,7 +135,23 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
 
   const scoreSignature = gradeItems.map((item) => `${item.subject}:${item.grade}`).join("|");
   const previousLayoutOrderRef = useRef("");
-  const previousZoomRef = useRef(DEFAULT_ZOOM);
+  const previousZoomRef = useRef(zoomPercent);
+
+  // Start the narrow canvas with the grade root and both school branches in
+  // view. The major/master columns remain reachable by dragging to the right.
+  useLayoutEffect(() => {
+    const viewport = viewportRef.current;
+    const canvas = canvasRef.current;
+    if (!viewport || !canvas || !results.length || !window.matchMedia("(max-width: 620px)").matches) return;
+    const schools = canvas.querySelectorAll<HTMLElement>(".pathway-school-node");
+    if (schools.length < 2) return;
+    const first = schools[0].getBoundingClientRect();
+    const last = schools[schools.length - 1].getBoundingClientRect();
+    const view = viewport.getBoundingClientRect();
+    const footerTop = document.querySelector(".stepper-footer")?.getBoundingClientRect().top ?? window.innerHeight;
+    const visibleBottom = Math.max(view.top, Math.min(view.bottom, footerTop - 8));
+    viewport.scrollTop += (first.top + last.bottom) / 2 - (view.top + visibleBottom) / 2;
+  }, [results.length]);
 
   useEffect(() => {
     if (selectedIds.length === 2) setCompareOpen(true);
@@ -280,9 +301,10 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   }
 
   function resetView() {
-    zoomPercentRef.current = DEFAULT_ZOOM;
+    const targetZoom = startingZoom();
+    zoomPercentRef.current = targetZoom;
     wheelDeltaRef.current = 0;
-    setZoomPercent(DEFAULT_ZOOM);
+    setZoomPercent(targetZoom);
     requestAnimationFrame(() => viewportRef.current?.scrollTo({ left: 0, top: 0, behavior: "smooth" }));
   }
 
@@ -411,6 +433,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
           <button type="button" className="pathway-reset-view" onClick={showActualSize}>{t("tree.actualSize")}</button>
           <span className="pathway-gesture-hint">{t("tree.zoomGesture")}</span>
         </div>
+        <span className="pathway-mobile-hint">{t("tree.mobileGesture")}</span>
         <p className="pathway-sr-only" aria-live="polite">
           {overviewNodes
             ? t("tree.overviewVisible", { threshold: MASTER_TITLE_ZOOM_THRESHOLD })

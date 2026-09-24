@@ -2029,7 +2029,7 @@ select {
            scroll container) sits flush against the viewport top once
            scrolled. The 12px previously here created a visible gap
            above the bar that read as "uneven margin". */
-        padding: 0 var(--space-4) 80px;
+        padding: 0 var(--space-4) calc(80px + env(safe-area-inset-bottom, 0px));
         box-sizing: border-box;
         overflow-y: auto;
         overflow-x: hidden;

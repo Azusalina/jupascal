@@ -436,9 +436,7 @@
 
 @media (max-width: 620px) {
   .institution-split-results {
-    grid-template-columns: repeat(2, minmax(270px, 1fr));
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

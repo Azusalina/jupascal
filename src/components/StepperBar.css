@@ -548,7 +548,7 @@
          so the buttons split that column equally with no chasm. */
       grid-template-columns: auto minmax(0, 1fr);
       width: calc(100% - var(--space-4));
-      margin-bottom: var(--space-2);
+      margin-bottom: max(var(--space-2), env(safe-area-inset-bottom, 0px));
       padding: 6px;
       gap: var(--space-2);
       border-radius: 18px;
