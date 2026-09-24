@@ -19,7 +19,7 @@ export type ProgrammeDetail = {
   tuition_url?: string;
 };
 
-const DETAILS_URL = `/data/processed/programme_details_2026.json?v=${__APP_VERSION__}`;
+const DETAILS_URL = `${import.meta.env.BASE_URL}data/processed/programme_details_2026.json?v=${__APP_VERSION__}`;
 
 let cache: Promise<Record<string, ProgrammeDetail>> | null = null;
 

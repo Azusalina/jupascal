@@ -33,8 +33,9 @@ import type { Profile, Programme, ProgrammeResult, StudentGrades } from "./types
 
 const PathwayTree = lazy(() => import("./components/PathwayTree").then((module) => ({ default: module.PathwayTree })));
 
-const DATA_URL = "/data/processed/JUPAS_2026_Unified_Data.json";
-const VERSION_URL = "/data/processed/JUPAS_2026_Unified_Data.version";
+// The data worker resolves relative fetch URLs against /assets/, not this page.
+const DATA_URL = new URL(`${import.meta.env.BASE_URL}data/processed/JUPAS_2026_Unified_Data.json`, document.baseURI).href;
+const VERSION_URL = new URL(`${import.meta.env.BASE_URL}data/processed/JUPAS_2026_Unified_Data.version`, document.baseURI).href;
 
 // Stable empty reference for allResults before the first worker
 // compute lands – a fresh [] each render would defeat downstream memos.

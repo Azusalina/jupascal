@@ -9,16 +9,24 @@
   // uppercase page. Runs before paint (minimal flash) and only redirects when the
   // target differs from the current path, so an invalid code can't loop.
   (function () {
-    var m = location.pathname.match(/^\/p\/(js[a-z0-9]{4})\/?$/i);
+    var base = location.pathname.startsWith('/jupascal/') ? '/jupascal/' : '/';
+    var m = location.pathname.slice(base.length - 1).match(/^\/p\/(js[a-z0-9]{4})\/?$/i);
     if (m) {
-      var want = "/p/" + m[1].toUpperCase() + "/";
+      var want = base + "p/" + m[1].toUpperCase() + "/";
       if (want !== location.pathname) location.replace(want + location.search + location.hash);
     }
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-site-path]').forEach(function (link) {
+        link.href = base + link.getAttribute('data-site-path');
+      });
+      document.querySelector('.brand img').src = base + 'logo.svg';
+      document.querySelector('link[rel="icon"]').href = base + 'favicon.svg';
+    });
   })();
 </script>
 <title>找不到頁面 · Page not found | JUPASCal</title>
 <meta name="robots" content="noindex, follow" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600;700&display=swap" />
@@ -45,15 +53,15 @@
 </head>
 <body>
 <header class="site-header"><div class="row">
-  <a class="brand" href="/"><img src="/logo.svg" alt="" /><span>JUPASCal</span><span class="yr">2026</span></a>
+  <a class="brand" href="./" data-site-path=""><img src="logo.svg" alt="" /><span>JUPASCal</span><span class="yr">2026</span></a>
 </div></header>
 <main>
   <p class="code">404</p>
   <h1>找不到頁面 · Page not found</h1>
   <p>此頁面不存在——可能是連結有誤，或課程編號不正確。<br><span lang="en">This page doesn't exist — the link may be mistyped, or the programme code may be wrong.</span></p>
   <div class="btns">
-    <a class="btn primary" href="/">打開計算機 · Open the calculator</a>
-    <a class="btn ghost" href="/p/">瀏覽所有課程 · Browse all programmes</a>
+    <a class="btn primary" href="./" data-site-path="">打開計算機 · Open the calculator</a>
+    <a class="btn ghost" href="programmes/" data-site-path="programmes/">瀏覽所有課程 · Browse all programmes</a>
   </div>
 </main>
 </body>
