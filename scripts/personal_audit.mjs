@@ -127,7 +127,7 @@ check('HKU weighted best six with seventh',()=>near(score('JS6860',{...sample,Ph
 const finance={[ENG]:'5*',[MATH]:'5',[M1]:'5**',[CHI]:'4',Biology:'5',Chemistry:'3',Physics:'2'};
 check('HKU quantitative finance requires extended maths',()=>near(score('JS6884',finance),40.9,'Quantitative Finance'));
 check('HKU actuarial maths weighting',()=>near(score('JS6729',finance),34.7,'Actuarial Science'));
-check('HKU statistical decision sciences weighting',()=>near(score('JS6779',finance),33.25,'Statistical Decision Sciences'));
+check('HKU statistical decision sciences weighting',()=>near(score('JS6779',finance),34,'Statistical Decision Sciences'));
 check('HKU changed formulas neither force nor double-weight extended maths',()=>{
  const grades={[ENG]:'4',[MATH]:'4',[CHI]:'5',Biology:'5*',Chemistry:'5**'};
  for(const code of ['JS6200','JS6224','JS6248','JS6999']) near(score(code,grades),29,code);

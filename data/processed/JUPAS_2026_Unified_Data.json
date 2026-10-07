@@ -8873,7 +8873,7 @@
     "scores_2025": {
       "uq": null,
       "median": null,
-      "lq": null
+      "lq": 35.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -9186,7 +9186,7 @@
     "scores_2025": {
       "uq": 57.0,
       "median": 53.0,
-      "lq": 51.0
+      "lq": 31.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -9499,7 +9499,7 @@
     "scores_2025": {
       "uq": 35.0,
       "median": 34.0,
-      "lq": 32.0
+      "lq": 34.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -10685,7 +10685,7 @@
     "scores_2025": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 35.0
+      "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -11395,7 +11395,7 @@
     "scores_2025": {
       "uq": 37.0,
       "median": 37.0,
-      "lq": 36.0
+      "lq": 37.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -11898,7 +11898,7 @@
     "scores_2025": {
       "uq": 40.0,
       "median": 40.0,
-      "lq": 39.0
+      "lq": 40.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -12042,11 +12042,11 @@
     ],
     "short_description": "Statistical Decision Sciences offers comprehensive training in quantitative analysis and statistical modeling to students, emphasizing both theory and practice. Upon admission, students can select one of the three specialized Professional Cores in Decision Analytics, Risk…",
     "name_en": "Statistical Decision Sciences",
-    "formula_2026": "1.5 x Math + Best 4 Subjects",
+    "formula_2026": "1.5 x Eng + Best 4 Subjects",
     "scores_2025": {
       "uq": 33.0,
       "median": 33.0,
-      "lq": 31.0
+      "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -12063,7 +12063,7 @@
       }
     },
     "subject_weights_2026": {
-      "Mathematics (Compulsory Part)": 1.5
+      "English Language": 1.5
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
@@ -12071,7 +12071,7 @@
       [
         {
           "subjects": [
-            "Mathematics (Compulsory Part)"
+            "English Language"
           ],
           "weight": 1.5,
           "weights": {},
@@ -12546,7 +12546,7 @@
     "scores_2025": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 34.0
+      "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -13045,7 +13045,7 @@
     "scores_2025": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 34.0
+      "lq": 35.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -13286,7 +13286,7 @@
     "scores_2025": {
       "uq": 34.0,
       "median": 33.0,
-      "lq": 32.0
+      "lq": 35.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -13651,7 +13651,7 @@
     "scores_2025": {
       "uq": 48.0,
       "median": 47.0,
-      "lq": 46.0
+      "lq": 48.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -14151,7 +14151,7 @@
     ],
     "short_description": "The Bachelor of Science in Quantitative Finance [BSc(QFin)] is a premium finance programme. Built on a solid foundation in economics and finance, the BSc(QFin) programme equips students with the essential quant skills, such as mathematics, statistics, and programming, that are…",
     "name_en": "Bachelor of Science in Quantitative Finance",
-    "formula_2026": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 7th Best Subject",
+    "formula_2026": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
       "uq": 55.0,
       "median": 51.0,
@@ -14839,7 +14839,7 @@
     "scores_2025": {
       "uq": 44.0,
       "median": 41.0,
-      "lq": 39.0
+      "lq": 32.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {

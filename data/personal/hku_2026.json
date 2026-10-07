@@ -18,7 +18,7 @@
     "benchmarks": {
       "uq": 37.0,
       "median": 37.0,
-      "lq": 36.0
+      "lq": 37.0
     }
   },
   {
@@ -40,7 +40,7 @@
     "benchmarks": {
       "uq": 40.0,
       "median": 40.0,
-      "lq": 39.0
+      "lq": 40.0
     }
   },
   {
@@ -62,7 +62,7 @@
     "benchmarks": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 34.0
+      "lq": 36.0
     }
   },
   {
@@ -84,7 +84,7 @@
     "benchmarks": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 34.0
+      "lq": 35.0
     }
   },
   {
@@ -106,7 +106,7 @@
     "benchmarks": {
       "uq": 34.0,
       "median": 33.0,
-      "lq": 32.0
+      "lq": 35.0
     }
   },
   {
@@ -128,14 +128,14 @@
     "benchmarks": {
       "uq": 48.0,
       "median": 47.0,
-      "lq": 46.0
+      "lq": 48.0
     }
   },
   {
     "code": "JS6884",
     "name": "Bachelor of Science in Quantitative Finance",
     "faculty": "HKU Business School",
-    "formula": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 7th Best Subject",
+    "formula": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 6th Best Subject",
     "core": [
       "4",
       "3",
@@ -260,7 +260,7 @@
     "benchmarks": {
       "uq": null,
       "median": null,
-      "lq": null
+      "lq": 35.0
     }
   },
   {
@@ -282,7 +282,7 @@
     "benchmarks": {
       "uq": 57.0,
       "median": 53.0,
-      "lq": 51.0
+      "lq": 31.0
     }
   },
   {
@@ -304,7 +304,7 @@
     "benchmarks": {
       "uq": 35.0,
       "median": 34.0,
-      "lq": 32.0
+      "lq": 34.0
     }
   },
   {
@@ -326,14 +326,14 @@
     "benchmarks": {
       "uq": 36.0,
       "median": 35.0,
-      "lq": 35.0
+      "lq": 36.0
     }
   },
   {
     "code": "JS6779",
     "name": "Statistical Decision Sciences",
     "faculty": "School of Computing and Data Science",
-    "formula": "1.5 x Math + Best 4 Subjects",
+    "formula": "1.5 x Eng + Best 4 Subjects",
     "core": [
       "3",
       "3",
@@ -348,7 +348,7 @@
     "benchmarks": {
       "uq": 33.0,
       "median": 33.0,
-      "lq": 31.0
+      "lq": 36.0
     }
   },
   {
@@ -370,7 +370,7 @@
     "benchmarks": {
       "uq": 44.0,
       "median": 41.0,
-      "lq": 39.0
+      "lq": 32.0
     }
   }
 ]
