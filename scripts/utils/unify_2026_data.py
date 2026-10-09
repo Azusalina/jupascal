@@ -1,8 +1,9 @@
 """Build the personal HKU/HKUST dataset using Python 3 (standard library only).
 
-The supplied ../UpToDateData2026 Markdown is authoritative. A scoped snapshot
+The latest ../updatedata2026/hku26.md overrides HKU names, formulas and scores.
+The supplied ../UpToDateData2026 Markdown supplies the remaining fields. A scoped snapshot
 keeps the checkout buildable when that sibling folder is unavailable. Only
-2026 calculation recipes are emitted; 2025 numbers are historical benchmarks.
+2026 calculation recipes are emitted; benchmark_year identifies each score cycle.
 """
 import hashlib
 import json
@@ -64,6 +65,27 @@ def read_source(inst):
                 benchmarks=dict(median=num(cells[4]), lq=num(cells[5])), expected=num(cells[6])))
     assert {p['code'] for p in rows} == KEEP[inst], f'Missing or duplicate {inst} source programmes'
     assert len(rows) == len(KEEP[inst])
+    if inst == 'HKU':
+        latest = ROOT.parent / 'updatedata2026/hku26.md'
+        if latest.exists():
+            official = {}
+            for line in latest.read_text().splitlines():
+                match = re.match(r'^\| (\d{4}) \|', line)
+                if not match or 'JS' + match[1] not in KEEP[inst]:
+                    continue
+                cells = [clean(c) for c in line.strip('|').split('|')]
+                assert len(cells) == 6, line
+                code = 'JS' + match[1]
+                assert code not in official, f'Duplicate official row: {code}'
+                official[code] = dict(name=cells[1], formula=re.sub(r' Subjects a$', ' Subjects ¤', cells[2]),
+                    benchmarks=dict(uq=num(cells[3]), median=num(cells[4]), lq=num(cells[5])),
+                    benchmark_year=2026, score_source='updatedata2026/hku26.md')
+            assert set(official) == KEEP[inst], 'Latest official HKU source must cover all retained programmes'
+            for row in rows:
+                row.update(official[row['code']])
+        elif 'Score source: updatedata2026/hku26.md' in source.read_text():
+            for row in rows:
+                row.update(benchmark_year=2026, score_source='updatedata2026/hku26.md')
     snapshot.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n')
     return rows
 
@@ -150,6 +172,10 @@ def main():
             p.update(name_en=row['name'], formula_2026=row['formula'], scores_2025=row['benchmarks'],
                 source_2026=f'UpToDateData2026/{inst.lower()}.md', score_conversion_table=dict(category_a=SCALE),
                 subject_weights_2026={}, best_of_weights_2026=[], calculation_constraints=[])
+            # scores_2025 is the legacy runtime field; benchmark_year identifies
+            # the actual admissions cycle of its values.
+            p['benchmark_year'] = row.get('benchmark_year', 2025)
+            p['score_source'] = row.get('score_source', p['source_2026'])
             if inst == 'HKU':
                 recipes, bonus, catc = hku_recipe(row['formula'])
                 p.update(faculty=row['faculty'], min_requirements_2026=hku_requirements(row),
@@ -158,7 +184,7 @@ def main():
                     apl_policy='none')
                 # Historical values are retained as reference only, without their
                 # old formulas or a numerical comparison on incompatible scales.
-                p['historical_comparable'] = code not in {'JS6224', 'JS6248', 'JS6999'}
+                p['historical_comparable'] = row.get('benchmark_year') == 2026 or code not in {'JS6224', 'JS6248', 'JS6999'}
                 p['max_achievable_score'] = 8.5 * (maximum_weight(recipes[0]) + bonus)
             else:
                 recipes = ust_recipe(code)

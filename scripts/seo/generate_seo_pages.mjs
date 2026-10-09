@@ -8,7 +8,7 @@ writeFileSync('dist/programmes/index.html', page('HKU & HKUST · 2026', `<ul>${d
 for (const p of data) {
   const refs = Object.entries(p.scores_2025).filter(([,v]) => v != null).map(([k,v]) => `${escape(k)}: ${v}`).join(' · ');
   const expected = p.expected_score_2026 == null ? '' : `<p>2026 expected score: <strong>${p.expected_score_2026}</strong></p>`;
-  const historical = refs ? `<h2>2025 historical admission figures</h2><p>${refs}</p>${p.historical_comparable === false ? '<p>The scoring basis changed. These figures are reference only and are not directly comparable with the 2026 score.</p>' : ''}` : '';
+  const historical = refs ? `<h2>${p.benchmark_year ?? 2025} admission figures</h2><p>${refs}</p>${p.historical_comparable === false ? '<p>The scoring basis changed. These figures are reference only and are not directly comparable with the 2026 score.</p>' : ''}` : '';
   const dir = `dist/p/${p.jupas_code}`;
   mkdirSync(dir, { recursive:true });
   writeFileSync(`${dir}/index.html`, page(`${p.jupas_code} · ${p.name_en}`, `<p>${escape(p.institution)} · ${escape(p.faculty)}</p><h2>2026 calculation</h2><p>${escape(p.formula_2026)}</p>${expected}${historical}<p><a href="../../?p=${p.jupas_code}">Calculate my score</a></p>`, '../../'));

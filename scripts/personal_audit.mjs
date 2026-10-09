@@ -90,6 +90,25 @@ check('shared intake is retained without excluded codes',()=>{
  assert.deepEqual(byCode.JS6755.quota_shared,{total:226,codes:['JS6755','JS6767','JS6781']});
  for(const p of data) for(const code of p.quota_shared?.codes??[]) assert.ok(byCode[code]);
 });
+check('latest official HKU source overrides every retained score and formula',()=>{
+ const path='../updatedata2026/hku26.md';
+ if(!existsSync(path)) return;
+ const seen=new Set();
+ for(const line of readFileSync(path,'utf8').split('\n')){
+  const cells=line.split('|').slice(1,-1).map(s=>s.trim());
+  if(!/^\d{4}$/.test(cells[0]??'')) continue;
+  const code='JS'+cells[0], p=byCode[code]; if(!p) continue;
+  assert.ok(!seen.has(code)); seen.add(code);
+  assert.equal(p.benchmark_year,2026);
+  assert.equal(p.score_source,'updatedata2026/hku26.md');
+  assert.equal(p.formula_2026,cells[2].replace(/ Subjects a$/,' Subjects ¤'));
+  assert.deepEqual(p.scores_2025,{uq:Number(cells[3]),median:Number(cells[4]),lq:Number(cells[5])});
+  assert.ok(p.scores_2025.uq>=p.scores_2025.median && p.scores_2025.median>=p.scores_2025.lq,code);
+  assert.equal(p.historical_comparable,true);
+ }
+ assert.equal(seen.size,17);
+ assert.equal(byCode.JS6884.formula_2026.endsWith('0.2 x 7th Best Subject'),true);
+});
 check('supplied source tables',()=>{
  for(const inst of ['hku','hkust']) {
   const path=`../UpToDateData2026/${inst}.md`;
@@ -177,11 +196,15 @@ check('required subject pools cannot reuse a single elective',()=>{
  assert.equal(checkEligibility(grades,byCode.JS6729.min_requirements_2026,byCode.JS6729).eligible,false);
  assert.equal(checkEligibility({...grades,Economics:'3'},byCode.JS6729.min_requirements_2026,byCode.JS6729).eligible,true);
 });
-check('changed HKU formulas never compare incompatible historical totals',()=>{
+check('latest official HKU scores are comparable; incompatible historical totals remain blocked',()=>{
  for(const code of ['JS6224','JS6248','JS6999']) {
   const r=buildProgrammeResult(byCode[code],sample);
   assert.equal(r.calculation.formula,byCode[code].formula_2026);
-  assert.deepEqual(r.comparisons,[]);assert.equal(effectiveBenchmarks(byCode[code]).source,'none');
+  assert.equal(byCode[code].benchmark_year,2026);
+  assert.ok(r.comparisons.length>0);
+  const old={...byCode[code],historical_comparable:false};
+  assert.deepEqual(buildProgrammeResult(old,sample).comparisons,[]);
+  assert.equal(effectiveBenchmarks(old).source,'none');
   assert.ok(byCode[code].scores_2025.median>0);
  }
 });

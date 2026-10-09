@@ -525,8 +525,9 @@ export function DetailPanel({ results, activeCode, reviewRequest, onActiveCodeCh
             ) : null}
           </div>
           <RetakeDetailNote programme={programme} isRetaker={isRetaker} t={t} lang={lang} />
+          <p className="muted">{t("detail.benchmarkYear", { year: programme.benchmark_year ?? 2025 })}</p>
           {(() => {
-            // The institution's published 2025 admission scores (LQ/Median/UQ) are
+            // The institution's published admission scores (LQ/Median/UQ) are
             // ALWAYS shown — they exist regardless of whether the student has entered
             // grades. The delta vs the student's own score is overlaid only once there
             // IS a score (i.e. a matching comparison). Only a genuinely score-less

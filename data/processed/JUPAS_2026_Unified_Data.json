@@ -239,6 +239,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -633,6 +635,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -994,6 +998,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -1585,6 +1591,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -2026,6 +2034,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -2457,6 +2467,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -3084,6 +3096,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -3525,6 +3539,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -3966,6 +3982,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -4407,6 +4425,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -4848,6 +4868,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -5279,6 +5301,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -5718,6 +5742,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -6267,6 +6293,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -6912,6 +6940,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -7320,6 +7350,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -7789,6 +7821,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -8266,6 +8300,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -8582,6 +8618,8 @@
         "bonus_percentage": 5
       }
     ],
+    "benchmark_year": 2025,
+    "score_source": "UpToDateData2026/hkust.md",
     "score_slots_2026": [
       [
         {
@@ -8871,8 +8909,8 @@
     "name_en": "Computing and Data Science (Delta+)",
     "formula_2026": "Eng + Math + Best 3 Subjects",
     "scores_2025": {
-      "uq": null,
-      "median": null,
+      "uq": 37.0,
+      "median": 35.0,
       "lq": 35.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -8895,6 +8933,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -9184,8 +9224,8 @@
     "name_en": "Bachelor of Arts and Sciences in Applied Artificial Intelligence",
     "formula_2026": "Eng + Math + Best 3 Subjects",
     "scores_2025": {
-      "uq": 57.0,
-      "median": 53.0,
+      "uq": 34.0,
+      "median": 32.0,
       "lq": 31.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -9208,6 +9248,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -9255,7 +9297,7 @@
     "category_c_policy": "score_excluded",
     "extended_math_or_category_c": false,
     "apl_policy": "none",
-    "historical_comparable": false,
+    "historical_comparable": true,
     "max_achievable_score": 42.5,
     "formula_2026_id": "best5"
   },
@@ -9521,6 +9563,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -9568,7 +9612,7 @@
     "category_c_policy": "score_excluded",
     "extended_math_or_category_c": false,
     "apl_policy": "none",
-    "historical_comparable": false,
+    "historical_comparable": true,
     "max_achievable_score": 42.5,
     "formula_2026_id": "best5"
   },
@@ -9744,6 +9788,8 @@
     "subject_weights_2026": {},
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -10202,9 +10248,9 @@
     "name_en": "Bachelor of Social Sciences",
     "formula_2026": "Best 5 Subjects ¤",
     "scores_2025": {
-      "uq": 34.0,
-      "median": 31.0,
-      "lq": 29.0
+      "uq": 31.0,
+      "median": 29.0,
+      "lq": 28.0
     },
     "source_2026": "UpToDateData2026/hku.md",
     "score_conversion_table": {
@@ -10223,6 +10269,8 @@
     "subject_weights_2026": {},
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -10683,8 +10731,8 @@
     "name_en": "Bachelor of Science in Actuarial Science",
     "formula_2026": "1.2 x Eng + 1.2 x Math + 1.2 x M1 / M2 + Best 2 Subjects",
     "scores_2025": {
-      "uq": 36.0,
-      "median": 35.0,
+      "uq": 38.0,
+      "median": 36.0,
       "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -10709,6 +10757,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -11184,7 +11234,7 @@
     "formula_2026": "Best 5 Subjects ¤",
     "scores_2025": {
       "uq": 28.0,
-      "median": 28.0,
+      "median": 27.0,
       "lq": 26.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -11204,6 +11254,8 @@
     "subject_weights_2026": {},
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -11393,8 +11445,8 @@
     "name_en": "Bachelor of Business Administration",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
-      "uq": 37.0,
-      "median": 37.0,
+      "uq": 38.0,
+      "median": 38.0,
       "lq": 37.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -11417,6 +11469,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -11896,8 +11950,8 @@
     "name_en": "Bachelor of Economics / Bachelor of Economics and Finance",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
-      "uq": 40.0,
-      "median": 40.0,
+      "uq": 42.0,
+      "median": 41.0,
       "lq": 40.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -11920,6 +11974,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -12044,8 +12100,8 @@
     "name_en": "Statistical Decision Sciences",
     "formula_2026": "1.5 x Eng + Best 4 Subjects",
     "scores_2025": {
-      "uq": 33.0,
-      "median": 33.0,
+      "uq": 37.0,
+      "median": 36.0,
       "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -12067,6 +12123,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -12544,8 +12602,8 @@
     "name_en": "Bachelor of Business Administration in Accounting and Finance / Bachelor of Business Administration in Accounting Data Analytics",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
-      "uq": 36.0,
-      "median": 35.0,
+      "uq": 38.0,
+      "median": 37.0,
       "lq": 36.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -12568,6 +12626,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -13043,7 +13103,7 @@
     "name_en": "Bachelor of Business Administration (Business Analytics)",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
-      "uq": 36.0,
+      "uq": 37.0,
       "median": 35.0,
       "lq": 35.0
     },
@@ -13067,6 +13127,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -13284,8 +13346,8 @@
     "name_en": "Bachelor of Science in Marketing Analytics and Technology",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 3 Subjects + 0.2 x 6th Best Subject",
     "scores_2025": {
-      "uq": 34.0,
-      "median": 33.0,
+      "uq": 35.0,
+      "median": 35.0,
       "lq": 35.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -13308,6 +13370,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -13649,8 +13713,8 @@
     "name_en": "Bachelor of Finance in Asset Management and Private Banking",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 4 Subjects + 0.2 x 7th Best Subject",
     "scores_2025": {
-      "uq": 48.0,
-      "median": 47.0,
+      "uq": 49.0,
+      "median": 48.0,
       "lq": 48.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -13673,6 +13737,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -14151,9 +14217,9 @@
     ],
     "short_description": "The Bachelor of Science in Quantitative Finance [BSc(QFin)] is a premium finance programme. Built on a solid foundation in economics and finance, the BSc(QFin) programme equips students with the essential quant skills, such as mathematics, statistics, and programming, that are…",
     "name_en": "Bachelor of Science in Quantitative Finance",
-    "formula_2026": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "formula_2026": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 7th Best Subject",
     "scores_2025": {
-      "uq": 55.0,
+      "uq": 52.0,
       "median": 51.0,
       "lq": 50.0
     },
@@ -14179,6 +14245,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -14661,7 +14729,7 @@
     "name_en": "Bachelor of Business Administration in International Business and Global Management",
     "formula_2026": "1.5 x Eng + 1.5 x Math + Best 4 Subjects + 0.2 x 7th Best Subject",
     "scores_2025": {
-      "uq": 56.0,
+      "uq": 55.0,
       "median": 54.0,
       "lq": 53.0
     },
@@ -14685,6 +14753,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -14837,8 +14907,8 @@
     "name_en": "Computing and Data Science",
     "formula_2026": "Eng + Math + Best 3 Subjects",
     "scores_2025": {
-      "uq": 44.0,
-      "median": 41.0,
+      "uq": 34.0,
+      "median": 33.0,
       "lq": 32.0
     },
     "source_2026": "UpToDateData2026/hku.md",
@@ -14861,6 +14931,8 @@
     },
     "best_of_weights_2026": [],
     "calculation_constraints": [],
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md",
     "score_slots_2026": [
       [
         {
@@ -14908,7 +14980,7 @@
     "category_c_policy": "score_excluded",
     "extended_math_or_category_c": false,
     "apl_policy": "none",
-    "historical_comparable": false,
+    "historical_comparable": true,
     "max_achievable_score": 42.5,
     "formula_2026_id": "best5"
   }

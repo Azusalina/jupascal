@@ -16,10 +16,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 37.0,
-      "median": 37.0,
+      "uq": 38.0,
+      "median": 38.0,
       "lq": 37.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6767",
@@ -38,10 +40,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 40.0,
-      "median": 40.0,
+      "uq": 42.0,
+      "median": 41.0,
       "lq": 40.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6781",
@@ -60,10 +64,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 36.0,
-      "median": 35.0,
+      "uq": 38.0,
+      "median": 37.0,
       "lq": 36.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6793",
@@ -82,10 +88,12 @@
     ],
     "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
     "benchmarks": {
-      "uq": 36.0,
+      "uq": 37.0,
       "median": 35.0,
       "lq": 35.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6846",
@@ -104,10 +112,12 @@
     ],
     "requirements": "Level 3 or above in one of the following subjects: Biology, Business, Accounting and Financial Studies (Accounting), Business, Accounting and Financial Studies (Business Management), Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
     "benchmarks": {
-      "uq": 34.0,
-      "median": 33.0,
+      "uq": 35.0,
+      "median": 35.0,
       "lq": 35.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6860",
@@ -126,16 +136,18 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 48.0,
-      "median": 47.0,
+      "uq": 49.0,
+      "median": 48.0,
       "lq": 48.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6884",
     "name": "Bachelor of Science in Quantitative Finance",
     "faculty": "HKU Business School",
-    "formula": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 6th Best Subject",
+    "formula": "1.5 x Eng + 1.25 x Math + 1.25 x M1 / M2 + Best 3 Subjects + 0.2 x 7th Best Subject",
     "core": [
       "4",
       "3",
@@ -148,10 +160,12 @@
     ],
     "requirements": "Level 3 or above in Mathematics Extended Part (Module 1 or 2).",
     "benchmarks": {
-      "uq": 55.0,
+      "uq": 52.0,
       "median": 51.0,
       "lq": 50.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6896",
@@ -170,10 +184,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 56.0,
+      "uq": 55.0,
       "median": 54.0,
       "lq": 53.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6705",
@@ -195,7 +211,9 @@
       "uq": 31.0,
       "median": 31.0,
       "lq": 29.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6717",
@@ -214,10 +232,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 34.0,
-      "median": 31.0,
-      "lq": 29.0
-    }
+      "uq": 31.0,
+      "median": 29.0,
+      "lq": 28.0
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6731",
@@ -237,9 +257,11 @@
     "requirements": "–",
     "benchmarks": {
       "uq": 28.0,
-      "median": 28.0,
+      "median": 27.0,
       "lq": 26.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6200",
@@ -258,10 +280,12 @@
     ],
     "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
     "benchmarks": {
-      "uq": null,
-      "median": null,
+      "uq": 37.0,
+      "median": 35.0,
       "lq": 35.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6224",
@@ -280,10 +304,12 @@
     ],
     "requirements": "Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
     "benchmarks": {
-      "uq": 57.0,
-      "median": 53.0,
+      "uq": 34.0,
+      "median": 32.0,
       "lq": 31.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6248",
@@ -305,7 +331,9 @@
       "uq": 35.0,
       "median": 34.0,
       "lq": 34.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6729",
@@ -324,10 +352,12 @@
     ],
     "requirements": "Level 4 or above in Mathematics Extended Part (Module 1 or 2).",
     "benchmarks": {
-      "uq": 36.0,
-      "median": 35.0,
+      "uq": 38.0,
+      "median": 36.0,
       "lq": 36.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6779",
@@ -346,10 +376,12 @@
     ],
     "requirements": "–",
     "benchmarks": {
-      "uq": 33.0,
-      "median": 33.0,
+      "uq": 37.0,
+      "median": 36.0,
       "lq": 36.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   },
   {
     "code": "JS6999",
@@ -368,9 +400,11 @@
     ],
     "requirements": "Level 3 or above in one of the following subjects: Biology, Chemistry, Economics, Information and Communication Technology, or Physics. Level 3 or above in Mathematics Extended Part (Module 1 or 2) is preferred.",
     "benchmarks": {
-      "uq": 44.0,
-      "median": 41.0,
+      "uq": 34.0,
+      "median": 33.0,
       "lq": 32.0
-    }
+    },
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/hku26.md"
   }
 ]

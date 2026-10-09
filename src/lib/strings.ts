@@ -14,6 +14,7 @@
 export type Entry = { en: string; zh: string };
 
 export const STRINGS = {
+  "detail.benchmarkYear": { en: "{year} admission scores", zh: "{year} 年入學分數" },
   "detail.flexible2026": { en: "HKUST flexible admission: one core subject may miss the 3–3–2 baseline by one level, provided your score is strictly above the programme's 2025 median and the programme is in Band A. Standard eligibility is shown separately.", zh: "科大彈性收生：中、英、數其中一科可較 3–3–2 基本要求低一級，但課程分數須高於該課程 2025 年中位數，並須將課程放於 Band A。一般入學資格另行顯示。" },
   "detail.expected2026": { en: "2026 expected score", zh: "2026 年預期分數" },
   "detail.historicalOnly": { en: "Historical reference only: the formula changed for 2026. These 2025 figures are not directly comparable to your calculated score.", zh: "僅供往年參考：2026 年計分方法已改動，以上 2025 年數字不可與你的計算分數直接比較。" },
@@ -80,11 +81,11 @@ export const STRINGS = {
   "advisorEmpty.lede": { en: "Once you add programmes, this panel weighs each choice against past admission data, highlights the main risks, and suggests safer alternatives in the same field.", zh: "加入課程後，本面板會對照歷年收生數據評估各個志願，指出主要風險，並建議方向相近而較穩妥的選擇。" },
   "advisorEmpty.checkHeading": { en: "What the analysis covers", zh: "分析涵蓋以下各項" },
   "advisorEmpty.check1": { en: "Whether your grades meet each programme's 2026 entry requirements.", zh: "按你的成績，檢查各志願是否符合 2026 年入學要求。" },
-  "advisorEmpty.check2": { en: "Where each score sits against the 2025 LQ, median, and UQ.", zh: "各志願的計算分數相對 2025 年 LQ／中位數／UQ 的位置。" },
+  "advisorEmpty.check2": { en: "Where each score sits against the published LQ, median, and UQ.", zh: "各志願的計算分數相對 官方 LQ／中位數／UQ 的位置。" },
   "advisorEmpty.check3": { en: "Whether your Band A choices are realistic, and which ones are a reach.", zh: "Band A（A1–A3）的選擇是否穩妥，哪些則較為進取。" },
   "advisorEmpty.check4": { en: "Extra requirements like interviews, portfolios, or admission tests.", zh: "成績以外的要求，例如面試、作品集或入學試。" },
   "advisorEmpty.check5": { en: "Safer alternatives in a similar field for any risky Band A choice.", zh: "為較進取的 Band A 志願，建議方向相近而較穩妥的替代課程。" },
-  "advisorEmpty.footnote": { en: "Scores are estimates based on 2025 admission data and 2026 weightings. Actual offers still depend on JUPAS ranking, places, interviews, and competition.", zh: "分數乃根據 2025 年收生數據及 2026 年計分比重估算；最終能否取錄，仍視乎 JUPAS 排位、學額、面試及競爭情況。" },
+  "advisorEmpty.footnote": { en: "Scores are estimates based on published admission data and 2026 weightings. Actual offers still depend on JUPAS ranking, places, interviews, and competition.", zh: "分數乃根據 官方收生數據及 2026 年計分比重估算；最終能否取錄，仍視乎 JUPAS 排位、學額、面試及競爭情況。" },
 
   // – Step 1: grade input –
   "grade.ariaPanel": { en: "DSE grades", zh: "DSE 成績" },
@@ -324,9 +325,9 @@ export const STRINGS = {
   "strategy.title": { en: "Strategy snapshot", zh: "策略概覽" },
   "strategy.eligibility": { en: "Eligibility", zh: "入學資格" },
   "strategy.eligibilityValue": { en: "{n}/{total} pass requirements", zh: "{n}/{total} 符合入學要求" },
-  "strategy.aboveMedian": { en: "Above 2025 median", zh: "高於 2025 年中位數" },
+  "strategy.aboveMedian": { en: "Above published median", zh: "高於 官方中位數" },
   "strategy.aboveMedianValue": { en: "{n}/{total} choices", zh: "{n}/{total} 個志願" },
-  "strategy.belowLq": { en: "Far below 2025 LQ", zh: "遠低於 2025 年 LQ" },
+  "strategy.belowLq": { en: "Far below published LQ", zh: "遠低於 官方 LQ" },
   "strategy.belowLqValue": { en: "{n} likely overshoot", zh: "{n} 個志願或過於進取" },
   "strategy.safety": { en: "B-band safety", zh: "B 組保底" },
   "strategy.safetyHas": { en: "Has a realistic safer choice", zh: "已有可行的保底選擇" },
@@ -366,7 +367,7 @@ export const STRINGS = {
   // – Detail panel –
   "detail.emptyEyebrow": { en: "Step 3", zh: "步驟三" },
   "detail.emptyTitle": { en: "Select a programme", zh: "選擇課程" },
-  "detail.emptyLede": { en: "Choose one or more programmes to compare details, eligibility, score calculation, and the difference with 2025 admission scores.", zh: "選取一個或多個課程，即可比較課程詳情、入學資格、分數構成，以及與 2025 年入學分數的差距。" },
+  "detail.emptyLede": { en: "Choose one or more programmes to compare details, eligibility, score calculation, and the difference with published admission scores.", zh: "選取一個或多個課程，即可比較課程詳情、入學資格、分數構成，以及與 官方入學分數的差距。" },
   "detail.selectedAria": { en: "Selected programmes", zh: "已選課程" },
   "detail.programmeList": { en: "Programme List ({n})", zh: "課程清單（{n}）" },
   "detail.suggestionList": { en: "Safer options ({n})", zh: "穩妥之選（{n}）" },
@@ -425,7 +426,7 @@ export const STRINGS = {
   "detail.noData2025": { en: "No comparable historical benchmark; score uses the 2026 formula.", zh: "沒有可直接比較的往年基準；分數採用 2026 年計分方法。" },
   "detail.tapBreakdownHide": { en: "Hide subject breakdown", zh: "隱藏科目細項" },
   "detail.tapBreakdownShow": { en: "Tap to see subject breakdown", zh: "點選查看科目細項" },
-  "detail.noBenchmark": { en: "No 2025 LQ/Median/UQ score data is available for this programme.", zh: "此課程暫無 2025 年 LQ／中位數／UQ 分數數據。" },
+  "detail.noBenchmark": { en: "No published LQ/Median/UQ score data is available for this programme.", zh: "此課程暫無 官方 LQ／中位數／UQ 分數數據。" },
   "detail.lqCaveat": { en: "LQ above the median isn't a bug – this programme likely weighs more than your score (interview, portfolio, etc.).", zh: "LQ 高於中位數並非系統錯誤 – 此課程或會較重視分數以外的因素（如面試、作品集等）。" },
 
   // Driven by programme.score_basis = "restructured"; {from} = predecessor JS code.
@@ -681,7 +682,7 @@ export const STRINGS = {
   "share.advisorReady": { en: "Link ready!", zh: "連結已備妥！" },
   "share.advisorPreparing": { en: "Preparing…", zh: "準備中…" },
   "share.advisorBtn": { en: "Share analysis link", zh: "分享分析連結" },
-  "share.disclaimer": { en: "Scores are estimated using 2025 admission data and 2026 weightings. Final admission depends on JUPAS ranking, places, interviews, and competition.", zh: "分數乃根據 2025 年收生數據及 2026 年計分比重估算。最終能否取錄，仍視乎 JUPAS 排位、學額、面試及整體競爭情況。" },
+  "share.disclaimer": { en: "Scores are estimated using published admission data and 2026 weightings. Final admission depends on JUPAS ranking, places, interviews, and competition.", zh: "分數乃根據 官方收生數據及 2026 年計分比重估算。最終能否取錄，仍視乎 JUPAS 排位、學額、面試及整體競爭情況。" },
   "share.footerPrompt": { en: "Check your own JUPAS scores!", zh: "計算你自己的 JUPAS 分數" },
   "share.calcYourOwn": { en: "Calculate your own", zh: "計算我的分數" },
   "share.shareText": { en: "{name}'s JUPAS 2026 plan · {count} programmes", zh: "{name} 的 JUPAS 2026 計劃 · {count} 個課程" },
@@ -728,7 +729,7 @@ export const STRINGS = {
   "analysis.notes": { en: "{n} notes", zh: "{n} 項提示" },
   "analysis.detailCta": { en: "See each programme in detail", zh: "查看每個課程的詳細資料" },
   "analysis.detailCtaSub": { en: "Full scores, requirements, and past results for every pick.", zh: "每個志願的完整分數、入學要求及歷年收生結果。" },
-  "analysis.disclaimer": { en: "This is an automatic estimate based on 2025 admission scores and 2026 entrance requirements. For reference only – your real chances also depend on places, interviews, and how others apply.", zh: "此乃根據 2025 年收生分數及 2026 年入學要求自動估算，僅供參考，並非保證 – 實際取錄機會仍視乎學額、面試及其他申請人的情況。" },
+  "analysis.disclaimer": { en: "This is an automatic estimate based on published admission scores and 2026 entrance requirements. For reference only – your real chances also depend on places, interviews, and how others apply.", zh: "此乃根據 官方收生分數及 2026 年入學要求自動估算，僅供參考，並非保證 – 實際取錄機會仍視乎學額、面試及其他申請人的情況。" },
   "analysis.wantOwn": { en: "Want to check your own chances?", zh: "想計算自己的取錄機會？" },
   "analysis.notesInterview": { en: "interview / portfolio", zh: "面試／作品集" },
   "analysis.notesFewPlaces": { en: "very few places ({n})", zh: "學額甚少（{n} 個）" },
