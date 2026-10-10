@@ -398,6 +398,21 @@
   gap: var(--space-2);
 }
 
+.university-filter-group {
+  display: flex;
+  grid-column: 1 / -1;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.university-filter-group > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 
 .sort-option-grid {
   display: flex;

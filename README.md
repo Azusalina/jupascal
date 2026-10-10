@@ -17,8 +17,9 @@ npm run build
 ```
 
 Open the local URL printed by Vite. Enter your grades and choose a programme.
-Use All / HKU / HKUST to show both universities or one university in the list
-and pathway tree; the choice stays the same when switching views.
+Open Filter in the list and use All / HKU / HKUST to show both universities or
+one university. The pathway tree has the same university switch; the choice
+stays the same when switching views.
 
 Run `npm test` to audit source data and calculations. More technical details,
 source validation and license information are in [description.md](description.md).

@@ -10,7 +10,7 @@ import { MobileWelcome } from "./components/MobileWelcome";
 import { FiltersBar } from "./components/FiltersBar";
 import { GradeInput } from "./components/GradeInput";
 import { ResultsView } from "./components/ResultsView";
-import { InstitutionSwitch, type InstitutionScope } from "./components/InstitutionSwitch";
+import type { InstitutionScope } from "./components/InstitutionSwitch";
 import { ShareView } from "./components/ShareView";
 import { AnalysisView, AnalysisBody } from "./components/AnalysisView";
 import { StepperBar } from "./components/StepperBar";
@@ -1499,9 +1499,10 @@ function CalculatorApp() {
             <button type="button" className="active" aria-pressed="true" onClick={() => setBrowseDisplay("table")}>{t("tree.displayTable")}</button>
             <button type="button" aria-pressed="false" onClick={() => setBrowseDisplay("tree")}>{t("tree.displayTree")}</button>
           </div>
-          <InstitutionSwitch value={institutionScope} onChange={setInstitutionScope} />
           <FiltersBar
             filters={filters}
+            institutionScope={institutionScope}
+            onInstitutionScopeChange={setInstitutionScope}
             open={programmeFiltersOpen}
             total={institutionResults.length}
             shown={filteredResults.length}

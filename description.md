@@ -22,7 +22,8 @@ welcome.
 
 ## University display and source validation
 
-The list and pathway tree share an All / HKU / HKUST university switch. The switch
+The list's Filter panel and pathway tree share an All / HKU / HKUST university switch.
+The list's active-filter badge includes a selected university. The switch
 survives changes between the two views, including the selected-only list. A single
 university fills the list width; the tree contains only that university’s branch.
 Saved programme selections and grades are preserved. Tree comparisons discard

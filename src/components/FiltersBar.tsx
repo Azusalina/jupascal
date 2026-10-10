@@ -4,10 +4,13 @@ import type { BenchmarkBand } from "../types/jupas";
 import type { Filters, SortKey } from "../lib/results";
 import { useLang, type Translate } from "../lib/i18n";
 import "./FiltersBar.css";
+import { InstitutionSwitch, type InstitutionScope } from "./InstitutionSwitch";
 
 
 type Props = {
   filters: Filters;
+  institutionScope: InstitutionScope;
+  onInstitutionScopeChange: (scope: InstitutionScope) => void;
   open: boolean;
   total: number;
   shown: number;
@@ -39,9 +42,9 @@ type Props = {
 const bands: Array<BenchmarkBand | "all"> = ["all", "above-uq", "above-median", "above-lq", "below-lq", "no-score"];
 const sortOptions: SortKey[] = ["code", "personal", "lq", "median", "uq", "quota"];
 
-export function FiltersBar({ filters, open, total, shown, selectedCount, selectedOnly, compactResults, deltaMode, rowMode = "select", onRowModeChange, sortKey, sortDirection, showStepEyebrow = true, onFiltersChange, onOpenChange, onSelectedOnlyChange, onSelectAllShown, allShownSelected = false, onCompactResultsChange, onDeltaModeChange, onSortChange, onReviewSelected, onResetSelected, selectedOrder }: Props) {
+export function FiltersBar({ filters, institutionScope, onInstitutionScopeChange, open, total, shown, selectedCount, selectedOnly, compactResults, deltaMode, rowMode = "select", onRowModeChange, sortKey, sortDirection, showStepEyebrow = true, onFiltersChange, onOpenChange, onSelectedOnlyChange, onSelectAllShown, allShownSelected = false, onCompactResultsChange, onDeltaModeChange, onSortChange, onReviewSelected, onResetSelected, selectedOrder }: Props) {
   const { t } = useLang();
-  const activeFilterCount = Number(filters.eligibleOnly) + Number(filters.band !== "all") + Number(filters.interview !== "all") + Number(selectedOnly);
+  const activeFilterCount = Number(institutionScope !== "all") + Number(filters.eligibleOnly) + Number(filters.band !== "all") + Number(filters.interview !== "all") + Number(selectedOnly);
   const [sortOpen, setSortOpen] = useState(false);
 
   // Mobile: while the search input is focused, the four toolbar pills fold into
@@ -444,6 +447,7 @@ export function FiltersBar({ filters, open, total, shown, selectedCount, selecte
       >
         <div className="panel-collapse-inner">
         <div className="advanced-filters">
+          <InstitutionSwitch value={institutionScope} onChange={onInstitutionScopeChange} variant="filter" />
           <button
             type="button"
             className={selectedOnly ? "pill selected-only-pill active" : "pill selected-only-pill"}
