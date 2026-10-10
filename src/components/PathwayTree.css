@@ -1435,3 +1435,30 @@
     animation: none;
   }
 }
+
+/* Desktop layout for one or two universities: the control bar sits in the
+   flow above the canvas (it used to float over the first rows and hide them),
+   the canvas no longer reserves overlay padding, and a lone university lane is
+   centred in the viewport instead of hugging the top with a blank area below. */
+@media (min-width: 921px) {
+  .pathway-control-bar {
+    position: relative;
+    inset: auto;
+    margin: 10px 14px 0;
+  }
+
+  .pathway-scroll {
+    height: calc(100dvh - 240px);
+    min-height: 560px;
+  }
+
+  .pathway-canvas {
+    padding: 34px 34px 48px;
+    min-height: calc(max(560px, 100dvh - 240px) / var(--pathway-zoom, 1));
+    align-content: center;
+  }
+
+  .pathway-university-branches {
+    gap: 120px;
+  }
+}
