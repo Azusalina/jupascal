@@ -40,7 +40,12 @@ export function filterResults(results: ProgrammeResult[], filters: Filters) {
   return results.filter((result) => {
     const programme = result.programme;
     if (filters.eligibleOnly && !result.eligibility.eligible) return false;
-    if (filters.band !== "all" && result.band !== filters.band) return false;
+    if (filters.band !== "all") {
+      const minimumRank = { "above-lq": 2, "above-median": 3, "above-uq": 4 };
+      if (filters.band in minimumRank) {
+        if (benchmarkRank(result) < minimumRank[filters.band as keyof typeof minimumRank]) return false;
+      } else if (result.band !== filters.band) return false;
+    }
     if (filters.interview !== "all") {
       if (filters.interview === "after" && !hasPostReleaseInterview(programme)) return false;
       if (filters.interview === "before" && !hasPreReleaseOnlyInterview(programme)) return false;

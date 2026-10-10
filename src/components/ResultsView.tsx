@@ -278,7 +278,7 @@ export function ResultsView({ results, institutionScope = "all", selectedCodes, 
                           </span>
                         </td>
                         <td><QuotaBadge quota={result.programme.quota} compact label={false} /></td>
-                        <td>{result.calculation.totalScore.toFixed(2)}</td>
+                        <td><strong className="calculated-total">{result.calculation.totalScore.toFixed(2)}</strong></td>
                         <td><PersonalValueMark result={result} /></td>
                         <td><BandBadge result={result} /></td>
                         <DeltaCell result={result} keyName="lq" deltaMode={deltaMode} />
@@ -342,13 +342,13 @@ export function ResultsView({ results, institutionScope = "all", selectedCodes, 
                         : null}
                     </div>
                     <span className="compact-score-strip">
-                      <b>{result.calculation.totalScore.toFixed(2)}</b>
+                      <b className="calculated-total">{result.calculation.totalScore.toFixed(2)}</b>
                       <CompactBenchmark result={result} benchmarkKey="lq" label={t("common.lq")} deltaMode={deltaMode} />
                       <CentralCompactBenchmark result={result} deltaMode={deltaMode} />
                       <CompactBenchmark result={result} benchmarkKey="uq" label={t("common.uq")} deltaMode={deltaMode} />
                     </span>
                     <span className="card-score-row">
-                      <span><em>{t("results.yourScore")}</em><b>{result.calculation.totalScore.toFixed(2)}</b></span>
+                      <span><em>{t("results.yourScore")}</em><b className="calculated-total">{result.calculation.totalScore.toFixed(2)}</b></span>
                       <span className="card-score-badges"><InterviewFlag programme={result.programme} compact /><BandBadge result={result} /></span>
                     </span>
                     <span className="card-benchmarks">

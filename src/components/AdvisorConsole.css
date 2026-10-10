@@ -1663,17 +1663,18 @@ html:has(.advisor-console) body {
 .console-browse .table-shell {
   flex: 1 1 auto;
   min-height: 0;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
   max-height: none;
 }
 
-/* Fit each 7-column institution table into one half of the browse panel: fixed layout with
+/* Fit each 8-column institution table into the browse panel: fixed layout with
    explicit column widths so the PROGRAMME column absorbs the slack (and its
    name truncates) while the benchmark columns (LQ/Median/UQ) stay tight. */
 .console-browse .results-table {
   table-layout: fixed;
   width: 100%;
+  min-width: 640px;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.82rem;
@@ -1693,7 +1694,7 @@ html:has(.advisor-console) body {
 }
 .console-browse .results-table th,
 .console-browse .results-table td {
-  padding: 10px 8px;
+  padding: 12px 10px;
   vertical-align: middle;
 }
 /* Center every column except the Programme name (col 1, stays left). */
@@ -1709,20 +1710,37 @@ html:has(.advisor-console) body {
 .console-browse .results-table td:last-child {
   padding-right: 12px;
 }
-/* Column widths (7 cols). Programme = auto (takes the remainder); the rest
+/* Column widths (8 cols). Programme = auto (takes the remainder); the rest
    fixed to just fit their content. */
 .console-browse .results-table th:nth-child(2),  /* Quota */
-.console-browse .results-table td:nth-child(2) { width: 52px; }
+.console-browse .results-table td:nth-child(2) { width: 50px; }
 .console-browse .results-table th:nth-child(3),  /* Score (5-char number) */
-.console-browse .results-table td:nth-child(3) { width: 52px; }
-.console-browse .results-table th:nth-child(4),  /* Band */
-.console-browse .results-table td:nth-child(4) { width: 90px; }
-.console-browse .results-table th:nth-child(5),  /* LQ */
-.console-browse .results-table td:nth-child(5),
-.console-browse .results-table th:nth-child(6),  /* Median */
+.console-browse .results-table td:nth-child(3) { width: 64px; }
+.console-browse .results-table th:nth-child(4),  /* Personal value */
+.console-browse .results-table td:nth-child(4) { width: 64px; }
+.console-browse .results-table th:nth-child(5),  /* Band */
+.console-browse .results-table td:nth-child(5) { width: 100px; }
+.console-browse .results-table th:nth-child(6),  /* LQ */
 .console-browse .results-table td:nth-child(6),
-.console-browse .results-table th:nth-child(7),  /* UQ */
-.console-browse .results-table td:nth-child(7) { width: 52px; }
+.console-browse .results-table th:nth-child(7),  /* Median */
+.console-browse .results-table td:nth-child(7),
+.console-browse .results-table th:nth-child(8),  /* UQ */
+.console-browse .results-table td:nth-child(8) { width: 60px; }
+
+/* A single university uses the whole panel: distribute the numeric columns
+   evenly instead of leaving them clustered beside a very wide programme cell. */
+.console-browse .single-institution .results-table th:first-child,
+.console-browse .single-institution .results-table td:first-child { width: 38%; }
+.console-browse .single-institution .results-table th:nth-child(2),
+.console-browse .single-institution .results-table td:nth-child(2) { width: 8%; }
+.console-browse .single-institution .results-table th:nth-child(3),
+.console-browse .single-institution .results-table td:nth-child(3),
+.console-browse .single-institution .results-table th:nth-child(4),
+.console-browse .single-institution .results-table td:nth-child(4) { width: 10%; }
+.console-browse .single-institution .results-table th:nth-child(5),
+.console-browse .single-institution .results-table td:nth-child(5) { width: 13%; }
+.console-browse .single-institution .results-table th:nth-child(n+6),
+.console-browse .single-institution .results-table td:nth-child(n+6) { width: 7%; }
 
 /* Flat rows — no resting tint / zebra striping. Row separation comes from the
    base td border-bottom; hover + picked stay as interaction feedback. */
@@ -1838,21 +1856,21 @@ html:has(.advisor-console) body {
 }
 /* Benchmark cells (LQ/Median/UQ): raw score on top (strong), the delta stacked
    below it (span, coloured by sign). */
-.console-browse .results-table td:nth-child(n+5) {
+.console-browse .results-table td:nth-child(n+6) {
   font-size: 0.78rem;
   font-weight: 850;
   line-height: 1.2;
 }
-.console-browse .results-table td:nth-child(n+5) strong,
-.console-browse .results-table td:nth-child(n+5) span,
-.console-browse .results-table td:nth-child(n+5) .benchmark-cell-label {
+.console-browse .results-table td:nth-child(n+6) strong,
+.console-browse .results-table td:nth-child(n+6) span,
+.console-browse .results-table td:nth-child(n+6) .benchmark-cell-label {
   display: block;
 }
 /* Raw benchmark score (top line) matches the Score column size; delta below. */
-.console-browse .results-table td:nth-child(n+5) strong {
+.console-browse .results-table td:nth-child(n+6) strong {
   font-size: 0.82rem;
 }
-.console-browse .results-table td:nth-child(n+5) span {
+.console-browse .results-table td:nth-child(n+6) span {
   font-size: 0.76rem;
   font-weight: 800;
 }

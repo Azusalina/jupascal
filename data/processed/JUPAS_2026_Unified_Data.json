@@ -209,8 +209,8 @@
     "name_en": "Science (Group A)",
     "formula_2026": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "scores_2025": {
-      "median": 33.13,
-      "lq": 32.63
+      "median": 37.5,
+      "lq": 35.63
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -239,8 +239,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -605,8 +607,8 @@
     "name_en": "Science (Group B)",
     "formula_2026": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Biology / Chemistry (x2), Physics / M1 / M2 (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "scores_2025": {
-      "median": 33.38,
-      "lq": 32.75
+      "median": 36.75,
+      "lq": 34.5
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -635,8 +637,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -968,8 +972,8 @@
     "name_en": "Science (Group A) with Extended Major in Artificial Intelligence",
     "formula_2026": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "scores_2025": {
-      "median": 37.5,
-      "lq": 36.0
+      "median": 40.13,
+      "lq": 38.28
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -998,8 +1002,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -1561,8 +1567,8 @@
     "name_en": "Business and Management",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 35.0,
-      "lq": 33.9
+      "median": 37.0,
+      "lq": 36.9
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -1591,8 +1597,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.04,
     "score_slots_2026": [
       [
         {
@@ -2004,8 +2012,8 @@
     "name_en": "BBA in Economics",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 36.55,
-      "lq": 35.4
+      "median": 38.23,
+      "lq": 36.9
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -2034,8 +2042,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.06,
     "score_slots_2026": [
       [
         {
@@ -2437,8 +2447,8 @@
     "name_en": "BBA in Finance",
     "formula_2026": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "scores_2025": {
-      "median": 43.31,
-      "lq": 41.81
+      "median": 44.16,
+      "lq": 43.31
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -2467,8 +2477,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.52,
     "score_slots_2026": [
       [
         {
@@ -3066,8 +3078,8 @@
     "name_en": "BBA in Global Business",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 52.43,
-      "lq": 50.4
+      "median": 53.23,
+      "lq": 50.79
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -3096,8 +3108,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 6.91,
     "score_slots_2026": [
       [
         {
@@ -3509,8 +3523,8 @@
     "name_en": "BBA in Information Systems",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 35.93,
-      "lq": 35.4
+      "median": 38.23,
+      "lq": 37.04
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -3539,8 +3553,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.08,
     "score_slots_2026": [
       [
         {
@@ -3952,8 +3968,8 @@
     "name_en": "BBA in Management",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 33.9,
-      "lq": 33.9
+      "median": 35.05,
+      "lq": 35.05
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -3982,8 +3998,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 4.82,
     "score_slots_2026": [
       [
         {
@@ -4395,8 +4413,8 @@
     "name_en": "BBA in Marketing",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 32.55,
-      "lq": 32.4
+      "median": 35.5,
+      "lq": 35.4
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -4425,8 +4443,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 4.87,
     "score_slots_2026": [
       [
         {
@@ -4838,8 +4858,8 @@
     "name_en": "BBA in Operations Management",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 32.4,
-      "lq": 32.05
+      "median": 35.05,
+      "lq": 35.05
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -4868,8 +4888,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 4.77,
     "score_slots_2026": [
       [
         {
@@ -5271,8 +5293,8 @@
     "name_en": "BBA in Professional Accounting",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects",
     "scores_2025": {
-      "median": 34.05,
-      "lq": 33.55
+      "median": 37.23,
+      "lq": 35.82
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -5301,8 +5323,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 4.92,
     "score_slots_2026": [
       [
         {
@@ -5712,8 +5736,8 @@
     "name_en": "BSc in Economics and Finance",
     "formula_2026": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "scores_2025": {
-      "median": 48.19,
-      "lq": 46.5
+      "median": 47.25,
+      "lq": 45.75
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -5742,8 +5766,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.81,
     "score_slots_2026": [
       [
         {
@@ -6263,8 +6289,8 @@
     "name_en": "BSc in Quantitative Finance",
     "formula_2026": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "scores_2025": {
-      "median": 58.13,
-      "lq": 56.06
+      "median": 58.5,
+      "lq": 57.38
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -6293,8 +6319,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 7.29,
     "score_slots_2026": [
       [
         {
@@ -6910,8 +6938,8 @@
     "name_en": "BSc in Global China Studies",
     "formula_2026": "English x 2 + Chinese x 1.5 + Best 3 other subjects Cat. C subjects may be used once in the score calculation.",
     "scores_2025": {
-      "median": 29.23,
-      "lq": 28.8
+      "median": 30.99,
+      "lq": 30.3
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -6940,8 +6968,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -7320,8 +7350,8 @@
     "name_en": "BSc in Quantitative Social Analysis",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
     "scores_2025": {
-      "median": 33.0,
-      "lq": 32.5
+      "median": 36.0,
+      "lq": 35.5
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -7350,8 +7380,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -7791,8 +7823,8 @@
     "name_en": "BSc in Mathematics and Economics",
     "formula_2026": "English x 2 + Math x 2 + Best from Biology / Chemistry / Physics / Economics / M1 / M2 + Best 2 other subjects Weighting: M1 / M2 (x 2), Biology / Chemistry / Physics / Economics (x 1.5)",
     "scores_2025": {
-      "median": 44.1,
-      "lq": 39.2
+      "median": 47.05,
+      "lq": 44.85
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -7821,8 +7853,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": null,
     "score_slots_2026": [
       [
         {
@@ -8270,8 +8304,8 @@
     "name_en": "BSc in Risk Management and Business Intelligence",
     "formula_2026": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
     "scores_2025": {
-      "median": 44.25,
-      "lq": 43.5
+      "median": 47.25,
+      "lq": 46.69
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -8300,8 +8334,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.93,
     "score_slots_2026": [
       [
         {
@@ -8588,8 +8624,8 @@
     "name_en": "BSc in Sustainable and Green Finance",
     "formula_2026": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "scores_2025": {
-      "median": 37.88,
-      "lq": 37.13
+      "median": 41.25,
+      "lq": 40.03
     },
     "source_2026": "UpToDateData2026/hkust.md",
     "score_conversion_table": {
@@ -8618,8 +8654,10 @@
         "bonus_percentage": 5
       }
     ],
-    "benchmark_year": 2025,
-    "score_source": "UpToDateData2026/hkust.md",
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9",
+    "lower_quartile_per_subject_average": 5.08,
     "score_slots_2026": [
       [
         {

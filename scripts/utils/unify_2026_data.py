@@ -1,6 +1,7 @@
 """Build the personal HKU/HKUST dataset using Python 3 (standard library only).
 
 The latest ../updatedata2026/hku26.md overrides HKU names, formulas and scores.
+For HKUST, ../updatedata2026/ust26.md is a SHA256-verified extraction of ust26.pdf.
 The supplied ../UpToDateData2026 Markdown supplies the remaining fields. A scoped snapshot
 keeps the checkout buildable when that sibling folder is unavailable. Only
 2026 calculation recipes are emitted; benchmark_year identifies each score cycle.
@@ -37,11 +38,63 @@ def num(text):
     return None if text.strip() in ('–', '-', '') else float(text)
 
 
+def apply_latest_scores(inst, rows, source):
+    if inst == 'HKU':
+        latest = ROOT.parent / 'updatedata2026/hku26.md'
+        if latest.exists():
+            official = {}
+            for line in latest.read_text().splitlines():
+                match = re.match(r'^\| (\d{4}) \|', line)
+                if not match or 'JS' + match[1] not in KEEP[inst]:
+                    continue
+                cells = [clean(c) for c in line.strip('|').split('|')]
+                assert len(cells) == 6, line
+                code = 'JS' + match[1]
+                assert code not in official, f'Duplicate official row: {code}'
+                official[code] = dict(name=cells[1], formula=re.sub(r' Subjects a$', ' Subjects ¤', cells[2]),
+                    benchmarks=dict(uq=num(cells[3]), median=num(cells[4]), lq=num(cells[5])),
+                    benchmark_year=2026, score_source='updatedata2026/hku26.md')
+            assert set(official) == KEEP[inst], 'Latest official HKU source must cover all retained programmes'
+            for row in rows:
+                row.update(official[row['code']])
+        elif source.exists() and 'Score source: updatedata2026/hku26.md' in source.read_text():
+            for row in rows:
+                row.update(benchmark_year=2026, score_source='updatedata2026/hku26.md')
+    if inst == 'HKUST':
+        latest = ROOT.parent / 'updatedata2026/ust26.md'
+        pdf = ROOT.parent / 'updatedata2026/ust26.pdf'
+        if latest.exists():
+            text = latest.read_text()
+            digest = re.search(r'^PDF SHA256: ([a-f0-9]{64})$', text, re.M)
+            assert digest, 'HKUST score extraction needs PDF provenance'
+            if pdf.exists():
+                assert hashlib.sha256(pdf.read_bytes()).hexdigest() == digest[1], 'ust26.pdf changed: refresh its Markdown extraction before rebuilding'
+            official = {}
+            for line in text.splitlines():
+                match = re.match(r'^\| (JS\d{4}) \|', line)
+                if not match or match[1] not in KEEP[inst]:
+                    continue
+                cells = [clean(c) for c in line.strip('|').split('|')]
+                assert len(cells) == 6, line
+                assert match[1] not in official, f'Duplicate official HKUST row: {match[1]}'
+                official[match[1]] = dict(maximum=num(cells[2]),
+                    benchmarks=dict(median=num(cells[3]), lq=num(cells[4])),
+                    lower_quartile_per_subject_average=num(cells[5]),
+                    benchmark_year=2026, score_source='updatedata2026/ust26.pdf',
+                    score_source_sha256=digest[1])
+            assert set(official) == KEEP[inst], 'Latest official HKUST source must cover all retained programmes'
+            for row in rows:
+                row.update(official[row['code']])
+    return rows
+
+
 def read_source(inst):
     snapshot = DATA / 'personal' / f'{inst.lower()}_2026.json'
     source = SOURCE / f'{inst.lower()}.md'
     if not source.exists():
-        return json.loads(snapshot.read_text())
+        rows = apply_latest_scores(inst, json.loads(snapshot.read_text()), source)
+        snapshot.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n')
+        return rows
     rows = []
     faculty = ''
     for line in source.read_text().splitlines():
@@ -65,27 +118,7 @@ def read_source(inst):
                 benchmarks=dict(median=num(cells[4]), lq=num(cells[5])), expected=num(cells[6])))
     assert {p['code'] for p in rows} == KEEP[inst], f'Missing or duplicate {inst} source programmes'
     assert len(rows) == len(KEEP[inst])
-    if inst == 'HKU':
-        latest = ROOT.parent / 'updatedata2026/hku26.md'
-        if latest.exists():
-            official = {}
-            for line in latest.read_text().splitlines():
-                match = re.match(r'^\| (\d{4}) \|', line)
-                if not match or 'JS' + match[1] not in KEEP[inst]:
-                    continue
-                cells = [clean(c) for c in line.strip('|').split('|')]
-                assert len(cells) == 6, line
-                code = 'JS' + match[1]
-                assert code not in official, f'Duplicate official row: {code}'
-                official[code] = dict(name=cells[1], formula=re.sub(r' Subjects a$', ' Subjects ¤', cells[2]),
-                    benchmarks=dict(uq=num(cells[3]), median=num(cells[4]), lq=num(cells[5])),
-                    benchmark_year=2026, score_source='updatedata2026/hku26.md')
-            assert set(official) == KEEP[inst], 'Latest official HKU source must cover all retained programmes'
-            for row in rows:
-                row.update(official[row['code']])
-        elif 'Score source: updatedata2026/hku26.md' in source.read_text():
-            for row in rows:
-                row.update(benchmark_year=2026, score_source='updatedata2026/hku26.md')
+    rows = apply_latest_scores(inst, rows, source)
     snapshot.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n')
     return rows
 
@@ -176,6 +209,9 @@ def main():
             # the actual admissions cycle of its values.
             p['benchmark_year'] = row.get('benchmark_year', 2025)
             p['score_source'] = row.get('score_source', p['source_2026'])
+            if 'score_source_sha256' in row:
+                p['score_source_sha256'] = row['score_source_sha256']
+                p['lower_quartile_per_subject_average'] = row.get('lower_quartile_per_subject_average')
             if inst == 'HKU':
                 recipes, bonus, catc = hku_recipe(row['formula'])
                 p.update(faculty=row['faculty'], min_requirements_2026=hku_requirements(row),

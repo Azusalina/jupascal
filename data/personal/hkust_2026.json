@@ -5,10 +5,14 @@
     "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 33.13,
-      "lq": 32.63
+      "median": 37.5,
+      "lq": 35.63
     },
-    "expected": 29.0
+    "expected": 29.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5103",
@@ -16,10 +20,14 @@
     "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Biology / Chemistry (x2), Physics / M1 / M2 (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 33.38,
-      "lq": 32.75
+      "median": 36.75,
+      "lq": 34.5
     },
-    "expected": 29.0
+    "expected": 29.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5181",
@@ -27,10 +35,14 @@
     "formula": "English x 1.5 + Math + Best from Biology / Chemistry / Physics / M1 / M2 + Best 2 other subjects Weighting: Physics / M1 / M2 (x2), Biology / Chemistry (x 1.5) Remarks: The highest score of at most TWO weighted electives will be taken in the Best 5 score calculation.",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 37.5,
-      "lq": 36.0
+      "median": 40.13,
+      "lq": 38.28
     },
-    "expected": 33.0
+    "expected": 33.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5300",
@@ -38,10 +50,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 35.0,
-      "lq": 33.9
+      "median": 37.0,
+      "lq": 36.9
     },
-    "expected": 33.0
+    "expected": 33.0,
+    "lower_quartile_per_subject_average": 5.04,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5311",
@@ -49,10 +65,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 36.55,
-      "lq": 35.4
+      "median": 38.23,
+      "lq": 36.9
     },
-    "expected": 35.0
+    "expected": 35.0,
+    "lower_quartile_per_subject_average": 5.06,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5312",
@@ -60,10 +80,14 @@
     "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 43.31,
-      "lq": 41.81
+      "median": 44.16,
+      "lq": 43.31
     },
-    "expected": 39.0
+    "expected": 39.0,
+    "lower_quartile_per_subject_average": 5.52,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5313",
@@ -71,10 +95,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 52.43,
-      "lq": 50.4
+      "median": 53.23,
+      "lq": 50.79
     },
-    "expected": 50.0
+    "expected": 50.0,
+    "lower_quartile_per_subject_average": 6.91,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5314",
@@ -82,10 +110,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 35.93,
-      "lq": 35.4
+      "median": 38.23,
+      "lq": 37.04
     },
-    "expected": 34.0
+    "expected": 34.0,
+    "lower_quartile_per_subject_average": 5.08,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5315",
@@ -93,10 +125,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 33.9,
-      "lq": 33.9
+      "median": 35.05,
+      "lq": 35.05
     },
-    "expected": 34.0
+    "expected": 34.0,
+    "lower_quartile_per_subject_average": 4.82,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5316",
@@ -104,10 +140,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 32.55,
-      "lq": 32.4
+      "median": 35.5,
+      "lq": 35.4
     },
-    "expected": 34.0
+    "expected": 34.0,
+    "lower_quartile_per_subject_average": 4.87,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5317",
@@ -115,10 +155,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 32.4,
-      "lq": 32.05
+      "median": 35.05,
+      "lq": 35.05
     },
-    "expected": 34.0
+    "expected": 34.0,
+    "lower_quartile_per_subject_average": 4.77,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5318",
@@ -126,10 +170,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects",
     "maximum": 62.48,
     "benchmarks": {
-      "median": 34.05,
-      "lq": 33.55
+      "median": 37.23,
+      "lq": 35.82
     },
-    "expected": 34.0
+    "expected": 34.0,
+    "lower_quartile_per_subject_average": 4.92,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5331",
@@ -137,10 +185,14 @@
     "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 48.19,
-      "lq": 46.5
+      "median": 47.25,
+      "lq": 45.75
     },
-    "expected": 44.0
+    "expected": 44.0,
+    "lower_quartile_per_subject_average": 5.81,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5332",
@@ -148,10 +200,14 @@
     "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 58.13,
-      "lq": 56.06
+      "median": 58.5,
+      "lq": 57.38
     },
-    "expected": 54.0
+    "expected": 54.0,
+    "lower_quartile_per_subject_average": 7.29,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5411",
@@ -159,10 +215,14 @@
     "formula": "English x 2 + Chinese x 1.5 + Best 3 other subjects Cat. C subjects may be used once in the score calculation.",
     "maximum": 58.01,
     "benchmarks": {
-      "median": 29.23,
-      "lq": 28.8
+      "median": 30.99,
+      "lq": 30.3
     },
-    "expected": 27.0
+    "expected": 27.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5412",
@@ -170,10 +230,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 33.0,
-      "lq": 32.5
+      "median": 36.0,
+      "lq": 35.5
     },
-    "expected": 31.0
+    "expected": 31.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5813",
@@ -181,10 +245,14 @@
     "formula": "English x 2 + Math x 2 + Best from Biology / Chemistry / Physics / Economics / M1 / M2 + Best 2 other subjects Weighting: M1 / M2 (x 2), Biology / Chemistry / Physics / Economics (x 1.5)",
     "maximum": 71.4,
     "benchmarks": {
-      "median": 44.1,
-      "lq": 39.2
+      "median": 47.05,
+      "lq": 44.85
     },
-    "expected": 38.0
+    "expected": 38.0,
+    "lower_quartile_per_subject_average": null,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5814",
@@ -192,10 +260,14 @@
     "formula": "English x 2 + Math x 2 + Best 3 other subjects Weighting: M1 / M2 (x 1.5), other subjects (x 1)",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 44.25,
-      "lq": 43.5
+      "median": 47.25,
+      "lq": 46.69
     },
-    "expected": 40.0
+    "expected": 40.0,
+    "lower_quartile_per_subject_average": 5.93,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   },
   {
     "code": "JS5822",
@@ -203,9 +275,13 @@
     "formula": "English x 2 + Math x 2 + Better of Best 3 other subjects OR Best of Chemistry / Economics / Physics / M1 / M2 x 1.5 + Best 2 other subjects",
     "maximum": 66.94,
     "benchmarks": {
-      "median": 37.88,
-      "lq": 37.13
+      "median": 41.25,
+      "lq": 40.03
     },
-    "expected": 37.0
+    "expected": 37.0,
+    "lower_quartile_per_subject_average": 5.08,
+    "benchmark_year": 2026,
+    "score_source": "updatedata2026/ust26.pdf",
+    "score_source_sha256": "e7ca022a3999f39388aae1689ebfdb602455d3e1058511a2186de10079af9db9"
   }
 ]

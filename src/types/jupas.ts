@@ -164,6 +164,8 @@ export type Programme = {
   // Admissions year for the legacy benchmark storage field above.
   benchmark_year?: number;
   score_source?: string;
+  score_source_sha256?: string;
+  lower_quartile_per_subject_average?: number | null;
   offer_statistics?: OfferStatistic[];
   retake?: {
     penalty: string | null;                           // "10%" | "5% or less" | "6% to 10%" | null

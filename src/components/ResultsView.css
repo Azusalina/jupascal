@@ -14,6 +14,12 @@
   overflow-anchor: none;
 }
 
+.results-panel .calculated-total {
+  color: var(--accent);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
 .institution-split-results {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

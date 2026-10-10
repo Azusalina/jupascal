@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { build } from 'esbuild';
+import { createHash } from 'node:crypto';
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const data = read('data/processed/JUPAS_2026_Unified_Data.json');
 const registry = read('data/raw/subjects.canonical.json');
@@ -11,7 +12,7 @@ const load = async entry => {
   return import('data:text/javascript;base64,' + Buffer.from(output.outputFiles[0].text).toString('base64'));
 };
 const { calculateScore, checkEligibility } = await load('src/lib/calculator.ts');
-const { buildProgrammeResult, effectiveBenchmarks } = await load('src/lib/results.ts');
+const { buildProgrammeResult, effectiveBenchmarks, filterResults } = await load('src/lib/results.ts');
 const { defaultGrades, hasEnteredGrades } = await load('src/lib/personalDefaults.ts');
 const { PERSONAL_DIMENSIONS, hasPersonalParameters, personalValueFor } = await load('src/lib/personalization.ts');
 const { normalizedJupasScore, pathwayRank, sortPathwayResults } = await load('src/lib/pathwayRanking.ts');
@@ -36,6 +37,22 @@ check('scope',()=>{
  for(const p of data) assert.ok(PROGRAMME_CODE_PATTERN.test(p.jupas_code));
  for(const p of data) assert.ok(!Object.keys(p).some(k=>/formula_2025|weights_2025/.test(k)));
  assert.deepEqual(Object.keys(read('data/processed/programme_details_2026.json')).sort(),data.map(p=>p.jupas_code).sort());
+});
+check('score-range filters include every higher benchmark tier',()=>{
+ const programme={...byCode.JS6755,scores_2025:{lq:20,median:30,uq:40}};
+ const results=['3','4','5','5*'].map(level=>buildProgrammeResult(programme,
+  Object.fromEntries([ENG,CHI,MATH,M1,'Economics','Information and Communication Technology'].map(s=>[s,level]))));
+ results.push(buildProgrammeResult(programme,{}));
+ assert.deepEqual(results.map(r=>r.band),['below-lq','above-lq','above-median','above-uq','no-score']);
+ const base={query:'',eligibleOnly:false,interview:'all',band:'all'};
+ const bands=band=>filterResults(results,{...base,band}).map(r=>r.band);
+ assert.deepEqual(bands('above-lq'),['above-lq','above-median','above-uq']);
+ assert.deepEqual(bands('above-median'),['above-median','above-uq']);
+ assert.deepEqual(bands('above-uq'),['above-uq']);
+ assert.deepEqual(bands('below-lq'),['below-lq']);
+ assert.deepEqual(bands('no-score'),['no-score']);
+ assert.equal(filterResults(results,{...base,band:'above-lq',query:'JS6999'}).length,0);
+ assert.equal(bands('all').length,5);
 });
 check('personal defaults',()=>{
  assert.deepEqual(defaultGrades(),{
@@ -109,6 +126,38 @@ check('latest official HKU source overrides every retained score and formula',()
  }
  assert.equal(seen.size,17);
  assert.equal(byCode.JS6884.formula_2026.endsWith('0.2 x 7th Best Subject'),true);
+});
+check('official HKUST 2026 PDF scores replace the historical benchmarks',()=>{
+ const path='../updatedata2026/ust26.md';
+ if(!existsSync(path)) return;
+ const text=readFileSync(path,'utf8');
+ const digest=text.match(/^PDF SHA256: ([a-f0-9]{64})$/m)?.[1];
+ assert.ok(digest);
+ if(existsSync('../updatedata2026/ust26.pdf')){
+  assert.equal(createHash('sha256').update(readFileSync('../updatedata2026/ust26.pdf')).digest('hex'),digest);
+ }
+ const seen=new Set();
+ for(const line of text.split('\n')){
+  const c=line.split('|').slice(1,-1).map(v=>v.trim());
+  if(!/^JS\d{4}$/.test(c[0]??'')) continue;
+  const p=byCode[c[0]]; assert.ok(p); assert.equal(p.institution,'HKUST');
+  assert.ok(!seen.has(c[0])); seen.add(c[0]);
+  assert.equal(p.benchmark_year,2026);
+  assert.equal(p.score_source,'updatedata2026/ust26.pdf');
+  assert.equal(p.score_source_sha256,digest);
+  assert.equal(p.max_achievable_score,Number(c[2]));
+  assert.deepEqual(p.scores_2025,{median:Number(c[3]),lq:Number(c[4])});
+  assert.ok(p.scores_2025.median>=p.scores_2025.lq);
+  assert.equal(p.lower_quartile_per_subject_average,c[5]==='–'?null:Number(c[5]));
+  assert.equal(p.historical_comparable,true);
+ }
+ assert.equal(seen.size,19);
+ // Independent spot checks of both printed page columns and wrapped rows.
+ assert.deepEqual(byCode.JS5102.scores_2025,{median:37.50,lq:35.63});
+ assert.deepEqual(byCode.JS5181.scores_2025,{median:40.13,lq:38.28});
+ assert.deepEqual(byCode.JS5300.scores_2025,{median:37.00,lq:36.90});
+ assert.deepEqual(byCode.JS5813.scores_2025,{median:47.05,lq:44.85});
+ assert.deepEqual(byCode.JS5822.scores_2025,{median:41.25,lq:40.03});
 });
 check('supplied source tables',()=>{
  for(const inst of ['hku','hkust']) {
