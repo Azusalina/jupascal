@@ -9,6 +9,7 @@ import { useLang, pickName } from "../lib/i18n";
 import type { SortKey } from "../lib/results";
 import type { BenchmarkKey, Programme, ProgrammeResult } from "../types/jupas";
 import "./ResultsView.css";
+import type { InstitutionScope } from "./InstitutionSwitch";
 
 
 // Windowed-render chunk sizes. INITIAL fills a tall desktop viewport on
@@ -19,6 +20,7 @@ const WINDOW_CHUNK = 40;
 
 type Props = {
   results: ProgrammeResult[];
+  institutionScope?: InstitutionScope;
   selectedCodes: string[];
   activeCode?: string;
   compact: boolean;
@@ -44,7 +46,7 @@ type Props = {
   onOpenDetail?: (code: string) => void;
 };
 
-export function ResultsView({ results, selectedCodes, activeCode, compact, deltaMode = "points", sortKey, sortDirection, readOnly = false, onFocus, onPick, onUnpick, onPickMany, onUnpickMany, onSortChange, rowMode = "select", onOpenDetail }: Props) {
+export function ResultsView({ results, institutionScope = "all", selectedCodes, activeCode, compact, deltaMode = "points", sortKey, sortDirection, readOnly = false, onFocus, onPick, onUnpick, onPickMany, onUnpickMany, onSortChange, rowMode = "select", onOpenDetail }: Props) {
   const { t, lang } = useLang();
   const slotByCode = new Map(selectedCodes.map((code, index) => [code, slotLabel(index)]));
   // Render only the view that matches the current viewport instead
@@ -206,13 +208,14 @@ export function ResultsView({ results, selectedCodes, activeCode, compact, delta
   // iPad. On mobile isDesktop is false so cards always render and `compact`
   // just controls their density (unchanged).
   const showTable = isDesktop && !compact;
-  const institutionGroups = (["HKU", "HKUST"] as const).map((institution) => ({
+  const institutionGroups = (["HKU", "HKUST"] as const)
+    .filter((institution) => institutionScope === "all" || institutionScope === institution).map((institution) => ({
     institution,
     results: visibleResults.filter((result) => result.programme.institution === institution),
   }));
   return (
     <section className="results-panel" aria-label={t("results.ariaPanel")}>
-      <div className="institution-split-results">
+      <div className={`institution-split-results${institutionScope !== "all" ? " single-institution" : ""}`}>
         {institutionGroups.map((group) => (
           <section className="institution-results-pane" aria-label={`${group.institution} programmes`} key={group.institution}>
             <h3 className="institution-pane-title">

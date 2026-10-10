@@ -1263,6 +1263,13 @@
   color: var(--accent-contrast);
 }
 
+.pathway-control-bar .institution-switch {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
 .pathway-control-bar .pathway-embedded-display {
   justify-content: flex-start;
   flex: 0 0 auto;

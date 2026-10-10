@@ -22,6 +22,10 @@
   background: var(--line);
 }
 
+.institution-split-results.single-institution {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .institution-results-pane {
   display: flex;
   flex-direction: column;

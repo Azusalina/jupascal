@@ -24,9 +24,12 @@ import { pathwayRank, sortPathwayResults, type PathwaySortMode } from "../lib/pa
 import { CORE_SUBJECTS, M12_SUBJECT, M1_SUBJECT, subjectChipName } from "../lib/subjects";
 import type { ProgrammeResult, StudentGrades } from "../types/jupas";
 import "./PathwayTree.css";
+import { InstitutionSwitch, type InstitutionScope } from "./InstitutionSwitch";
 
 type Props = {
   results: ProgrammeResult[];
+  institutionScope: InstitutionScope;
+  onInstitutionScopeChange: (value: InstitutionScope) => void;
   grades: StudentGrades;
   onOpenMajor: (code: string) => void;
   onShowList: () => void;
@@ -68,7 +71,7 @@ function formatScore(value: number | null | undefined): string {
   return value.toFixed(2).replace(/\.?0+$/, "");
 }
 
-export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props) {
+export function PathwayTree({ results, institutionScope, onInstitutionScopeChange, grades, onOpenMajor, onShowList }: Props) {
   const { t, lang } = useLang();
   const [sortMode, setSortMode] = useState<PathwaySortMode>("hybrid");
   const [customJupasWeight, setCustomJupasWeight] = useState(50);
@@ -118,7 +121,8 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   }, [results, pathwaysByCode]);
 
   const selectedNodes = selectedIds.map((id) => compareNodes.get(id)).filter((node): node is CompareNode => Boolean(node));
-  const layoutOrderKey = INSTITUTIONS
+  const visibleInstitutions = INSTITUTIONS.filter((institution) => institutionScope === "all" || institutionScope === institution);
+  const layoutOrderKey = visibleInstitutions
     .map((institution) => `${institution}:${rankedResults
       .filter((result) => result.programme.institution === institution)
       .map((result) => result.programme.jupas_code)
@@ -137,21 +141,27 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
   const previousLayoutOrderRef = useRef("");
   const previousZoomRef = useRef(zoomPercent);
 
-  // Start the narrow canvas with the grade root and both school branches in
+  // Start the narrow canvas with the grade root and visible school branches in
   // view. The major/master columns remain reachable by dragging to the right.
   useLayoutEffect(() => {
     const viewport = viewportRef.current;
     const canvas = canvasRef.current;
     if (!viewport || !canvas || !results.length || !window.matchMedia("(max-width: 620px)").matches) return;
     const schools = canvas.querySelectorAll<HTMLElement>(".pathway-school-node");
-    if (schools.length < 2) return;
+    if (!schools.length) return;
     const first = schools[0].getBoundingClientRect();
     const last = schools[schools.length - 1].getBoundingClientRect();
     const view = viewport.getBoundingClientRect();
     const footerTop = document.querySelector(".stepper-footer")?.getBoundingClientRect().top ?? window.innerHeight;
     const visibleBottom = Math.max(view.top, Math.min(view.bottom, footerTop - 8));
     viewport.scrollTop += (first.top + last.bottom) / 2 - (view.top + visibleBottom) / 2;
-  }, [results.length]);
+  }, [results.length, institutionScope]);
+
+  useEffect(() => {
+    setSelectedIds((current) => current.every((id) => compareNodes.has(id))
+      ? current : current.filter((id) => compareNodes.has(id)));
+    setMasterDetail((current) => current && !compareNodes.has(current.id) ? null : current);
+  }, [compareNodes]);
 
   useEffect(() => {
     if (selectedIds.length === 2) setCompareOpen(true);
@@ -392,6 +402,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
           <button type="button" aria-pressed="false" onClick={onShowList}>{t("tree.displayTable")}</button>
           <button type="button" className="active" aria-pressed="true">{t("tree.displayTree")}</button>
         </div>
+        <InstitutionSwitch value={institutionScope} onChange={onInstitutionScopeChange} />
         <div className="pathway-tree-actions">
           <div className="pathway-sort-modes" role="group" aria-label={t("tree.sortAria")}> 
             {(["jupas", "personal", "hybrid", "custom"] as const).map((mode) => (
@@ -484,7 +495,7 @@ export function PathwayTree({ results, grades, onOpenMajor, onShowList }: Props)
             </article>
             <span className="pathway-trunk" aria-hidden="true" />
             <div className="pathway-university-branches">
-              {INSTITUTIONS.map((institution) => {
+              {visibleInstitutions.map((institution) => {
                 const institutionResults = rankedResults.filter((result) => result.programme.institution === institution);
                 return (
                   <div className="pathway-university-lane" key={institution}>

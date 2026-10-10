@@ -101,6 +101,7 @@ check('latest official HKU source overrides every retained score and formula',()
   assert.ok(!seen.has(code)); seen.add(code);
   assert.equal(p.benchmark_year,2026);
   assert.equal(p.score_source,'updatedata2026/hku26.md');
+  assert.equal(p.name_en,cells[1]);
   assert.equal(p.formula_2026,cells[2].replace(/ Subjects a$/,' Subjects ¤'));
   assert.deepEqual(p.scores_2025,{uq:Number(cells[3]),median:Number(cells[4]),lq:Number(cells[5])});
   assert.ok(p.scores_2025.uq>=p.scores_2025.median && p.scores_2025.median>=p.scores_2025.lq,code);

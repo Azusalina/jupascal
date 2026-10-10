@@ -575,6 +575,9 @@ export const STRINGS = {
   // – Horizontal grade → institution → major → master's pathway tree –
   "tree.aria": { en: "Interactive major and postgraduate pathway tree", zh: "互動主修及深造路徑樹" },
   "tree.title": { en: "Your horizontal pathway tree", zh: "你的橫向升學路徑樹" },
+  "browse.institutionAria": { en: "University filter", zh: "學校篩選" },
+  "browse.institutionLabel": { en: "University", zh: "學校" },
+  "browse.institutionAll": { en: "All", zh: "全部" },
   "tree.displayAria": { en: "Programme display style", zh: "課程顯示方式" },
   "tree.displayLabel": { en: "Display", zh: "顯示方式" },
   "tree.displayTable": { en: "Search & list", zh: "搜尋及清單" },

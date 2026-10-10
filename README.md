@@ -1,32 +1,24 @@
-## ***Self-customized version of jupascal***
+# Self-customized version of jupascal
 
-referring to https://www.jupascal.com;
-*Requires Node.js 20+;*
+## What is it?
+
+A personal HKU/HKUST admission-score calculator, referring to
+https://www.jupascal.com. It supports 17 HKU and 19 HKUST programmes with 2026
+calculation formulas, a programme list and an interactive pathway tree.
+
+## How to use
+
+Requires Node.js 20+.
 
 ```bash
 npm install
-npm run dev      
-npm run build  
+npm run dev
+npm run build
 ```
 
+Open the local URL printed by Vite. Enter your grades and choose a programme.
+Use All / HKU / HKUST to show both universities or one university in the list
+and pathway tree; the choice stays the same when switching views.
 
-
-## Structure
-
-```
-index.html, src/, vite.config.ts   the React app (repo root)
-data/processed/                    the runtime dataset the app fetches
-data/raw/                          source files + subject vocabulary
-scripts/extraction/                per-institution scrapers
-scripts/utils/                     unification + validation
-scripts/*.mjs                      JS audit harnesses (npm run audit*)
-docs/manuals/                      architecture & calculation notes
-.github/workflows/static.yml       build + deploy to GitHub Pages on pushes to the default branch
-```
-
-## License
-
-The source code is licensed under the **[MIT License](LICENSE)** — you're free to
-use, copy, modify, and distribute it, with attribution. Contributions are very
-welcome.
-
+Run `npm test` to audit source data and calculations. More technical details,
+source validation and license information are in [description.md](description.md).

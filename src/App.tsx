@@ -10,6 +10,7 @@ import { MobileWelcome } from "./components/MobileWelcome";
 import { FiltersBar } from "./components/FiltersBar";
 import { GradeInput } from "./components/GradeInput";
 import { ResultsView } from "./components/ResultsView";
+import { InstitutionSwitch, type InstitutionScope } from "./components/InstitutionSwitch";
 import { ShareView } from "./components/ShareView";
 import { AnalysisView, AnalysisBody } from "./components/AnalysisView";
 import { StepperBar } from "./components/StepperBar";
@@ -242,6 +243,7 @@ function CalculatorApp() {
   // Browse row-click mode (desktop): "select" toggles the pick, "view" opens detail.
   const [browseRowMode, setBrowseRowMode] = useState<"select" | "view">("select");
   const [browseDisplay, setBrowseDisplay] = useState<"table" | "tree">("tree");
+  const [institutionScope, setInstitutionScope] = useState<InstitutionScope>("all");
   const [sortKey, setSortKey] = useState<SortKey>("code");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const [activeCode, setActiveCode] = useState<string | undefined>();
@@ -1019,12 +1021,17 @@ function CalculatorApp() {
     worker.postMessage({ type: "compute", grades: deferredGrades, retakenSubjects: deferredRetakenSubjects, token });
   }, [programmes, deferredGrades, deferredRetakenSubjects]);
 
+  const institutionResults = useMemo(() => institutionScope === "all"
+    ? allResults
+    : allResults.filter((result) => result.programme.institution === institutionScope),
+  [allResults, institutionScope]);
+
   const selectedOnlyFilterKey = selectedOnly ? pickedCodes.join("|") : "";
   const filteredResults = useMemo(() => {
     const selectedSet = new Set(pickedCodes.filter((c): c is string => c !== null));
     const baseResults = selectedOnly
-      ? allResults.filter((result) => selectedSet.has(result.programme.jupas_code))
-      : filterResults(allResults, filters);
+      ? institutionResults.filter((result) => selectedSet.has(result.programme.jupas_code))
+      : filterResults(institutionResults, filters);
     if (selectedOnly && filters.query.trim()) {
       return sortResults(filterResults(baseResults, filters), sortKey, sortDirection, deltaMode);
     }
@@ -1032,7 +1039,7 @@ function CalculatorApp() {
       return sortResults(filterResults(baseResults, filters), sortKey, sortDirection, deltaMode);
     }
     return sortResults(baseResults, sortKey, sortDirection, deltaMode);
-  }, [allResults, filters, selectedOnly, selectedOnlyFilterKey, sortDirection, sortKey, deltaMode]);
+  }, [institutionResults, filters, selectedOnly, selectedOnlyFilterKey, sortDirection, sortKey, deltaMode]);
 
   // Defer the heavy filtered list – ResultsView renders ~864 row
   // elements (table + cards across desktop/mobile) per result, so
@@ -1477,7 +1484,9 @@ function CalculatorApp() {
       {browseDisplay === "tree" ? (
         <Suspense fallback={<div className="pathway-loading" role="status">{t("app.loading.text")}</div>}>
           <PathwayTree
-            results={allResults}
+            results={institutionResults}
+            institutionScope={institutionScope}
+            onInstitutionScopeChange={setInstitutionScope}
             grades={grades}
             onOpenMajor={openTreeMajorDetail}
             onShowList={() => setBrowseDisplay("table")}
@@ -1490,10 +1499,11 @@ function CalculatorApp() {
             <button type="button" className="active" aria-pressed="true" onClick={() => setBrowseDisplay("table")}>{t("tree.displayTable")}</button>
             <button type="button" aria-pressed="false" onClick={() => setBrowseDisplay("tree")}>{t("tree.displayTree")}</button>
           </div>
+          <InstitutionSwitch value={institutionScope} onChange={setInstitutionScope} />
           <FiltersBar
             filters={filters}
             open={programmeFiltersOpen}
-            total={allResults.length}
+            total={institutionResults.length}
             shown={filteredResults.length}
             selectedCount={pickedCount}
             selectedOnly={selectedOnly}
@@ -1529,6 +1539,7 @@ function CalculatorApp() {
           />
           <ResultsView
             results={deferredFilteredResults}
+            institutionScope={institutionScope}
             selectedCodes={pickedCodes.filter((c): c is string => c !== null)}
             activeCode={activeResult?.programme.jupas_code}
             compact={compactResults}
